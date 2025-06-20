@@ -22,7 +22,7 @@
   --color-background-hover: var(--surface-hover);
 
   --color-background-inverse: var(--surface-inverse);
-  --color-background-hover: var(--surface-inverse-hover);
+  --color-background-inverse-hover: var(--surface-inverse-hover);
 
   --color-text-strong: var(--text);
   --color-text: var(--text-soft);

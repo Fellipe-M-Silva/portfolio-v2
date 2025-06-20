@@ -35,7 +35,6 @@ onMounted(() => {
 }
 .theme-toggle:hover {
   background-color: var(--color-background-hover);
-  /* background-color: #123378; */
   color: var(--color-text-strong);
 }
 .theme-toggle .material-icons {

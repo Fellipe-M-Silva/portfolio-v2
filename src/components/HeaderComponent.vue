@@ -4,8 +4,8 @@ import ThemeToggle from './ThemeToggle.vue'
 
 <template>
   <header>
-    <div class="container">
-      <img src="../assets/logo.svg" alt="Logo" width="2rem" height="2rem" />
+    <div class="container-logo">
+      <img src="../assets/logo.svg" alt="Logo" width="32px" height="32px" />
       <h1 class="title-lg">Fellipe Mayan</h1>
     </div>
     <div class="container">
@@ -22,7 +22,7 @@ import ThemeToggle from './ThemeToggle.vue'
 <style scoped>
 header {
   display: flex;
-  padding: 0 1rem;
+  padding: 0 2rem;
   background-color: var(--color-background);
   gap: 1rem;
   align-items: center;
@@ -44,5 +44,12 @@ header a {
 header a:hover {
   color: var(--color-text-strong);
   text-decoration: underline;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
 }
 </style>
