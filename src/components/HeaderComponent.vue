@@ -5,15 +5,19 @@ import ThemeToggle from './ThemeToggle.vue'
 <template>
   <header>
     <div class="container-logo">
-      <img src="../assets/logo.svg" alt="Logo" width="32px" height="32px" />
-      <h1 class="title-lg">Fellipe Mayan</h1>
-    </div>
-    <div class="container">
+      <!-- <img src="../assets/logo.svg" alt="Logo" width="32px" height="32px" /> -->
+      <div class="name-title">
+        <h1 class="title-lg">Fellipe Mayan</h1>
+        <p class="body-md">Designer de Produto</p>
+      </div>
       <nav class="container">
         <a class="body-md nav-link" href="#">Projetos</a>
         <a class="body-md nav-link" href="#">Serviços</a>
         <a class="body-md nav-link" href="#">Contato</a>
       </nav>
+
+    </div>
+    <div class="container right">
       <ThemeToggle />
     </div>
   </header>
@@ -27,6 +31,7 @@ header {
   gap: 1rem;
   align-items: center;
   height: 5rem;
+  align-self: stretch;
 }
 
 header a {
@@ -51,5 +56,11 @@ header a:hover {
   align-items: center;
   gap: 0.5rem;
   flex: 1;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 </style>

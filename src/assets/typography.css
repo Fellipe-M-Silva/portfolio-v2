@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
+h1, h2, h3, h4, .title-lg, .title-md, .title-sm, .body-md, .body-sm {
+  margin: 0;
+  padding: 0;
+}
+
 h1, h2, h3 {
   font-family: 'Geist', sans-serif;
 }
@@ -11,7 +16,7 @@ h4 {
 
 h1 {
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 4rem;
 }
 
@@ -29,7 +34,14 @@ h3 {
 
 h4 {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+}
+
+.name {
+  font-weight: 700;
+  font-size:  1.25rem;
   line-height: 2.5rem;
   text-transform: uppercase;
 }
