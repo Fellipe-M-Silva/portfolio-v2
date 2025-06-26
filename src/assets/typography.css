@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-h1, h2, h3, h4, .title-lg, .title-md, .title-sm, .body-md, .body-sm {
+h1,
+h2,
+h3,
+h4,
+.title-lg,
+.title-md,
+.title-sm,
+.body-md,
+.body-sm {
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Geist', sans-serif;
+  color: var(--text-strong);
 }
 
 h4 {
   font-family: 'Geist Mono', monospace;
+  color: var(--text-muted);
 }
 
 h1 {
@@ -23,7 +35,7 @@ h1 {
 h2 {
   font-weight: 600;
   font-size: 2.5rem;
-  line-height: 4rem;
+  line-height: 3.5rem;
 }
 
 h3 {
@@ -37,11 +49,12 @@ h4 {
   font-size: 1.25rem;
   line-height: 2.5rem;
   text-transform: uppercase;
+  color: var(--text-soft);
 }
 
 .name {
   font-weight: 700;
-  font-size:  1.25rem;
+  font-size: 1.25rem;
   line-height: 2.5rem;
   text-transform: uppercase;
 }
@@ -80,12 +93,56 @@ h4 {
   line-height: 1.5rem;
 }
 
-p, li, span, a {
+p,
+li,
+span,
+a {
   font-family: 'Geist', sans-serif;
   font-weight: 400;
+  color: var(--text-medium);
 }
 
 .about {
   font-family: 'Geist', sans-serif;
   font-weight: 400;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .title-lg {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .title-md {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .title-sm {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 }

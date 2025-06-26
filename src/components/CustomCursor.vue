@@ -17,10 +17,10 @@ const handleMouseMove = (event) => {
 }
 
 const handleMouseOver = (event) => {
-  const photoContainer = document.getElementById('photo-container')
+  const photoContainer = document.getElementById('my-name')
   const projectCard = document.querySelector('.project-card')
   if (photoContainer && photoContainer.contains(event.target)) {
-    console.log('Mouse over photo container')
+    console.log('Mouse over my name')
     message.value = 'oi :)'
     showMessage.value = true
     isCursorFilled.value = true
@@ -90,7 +90,7 @@ onUnmounted(() => {
   pointer-events: none;
   cursor: none;
   opacity: 1;
-  background-color: #ffc91f;
+  background-color: var(--primary);
   z-index: 1000;
 
   display: flex;
@@ -115,7 +115,7 @@ onUnmounted(() => {
 
 .title-md {
   white-space: nowrap;
-  color: black;
+  color: var(--text-on-primary);
   transition:
     transform 0.2s ease-out,
     opacity 0.2s ease-out;
