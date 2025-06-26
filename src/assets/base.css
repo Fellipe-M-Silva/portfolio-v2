@@ -1,13 +1,14 @@
 :root {
   --white: #ffffff;
 
-  --surface: #fafafa;
-  --surface-hover: #F5F5F5;
-  --surface-muted: #F5F5F5;
+  --neutral-100: #fafafa;
+  --neutral-200: #ecece0;
+  --neutral-300: #dfdfce;
+  --neutral-400: #dedeba;
 
-  --surface-inverse: #1f1f1f;
-  --surface-inverse-hover: #292929;
-  --surface-inverse-muted: #1A1A1A;
+  --neutral-700: #565639;
+  --neutral-800: #313121;
+  --neutral-900: #14140b;
 
   --text: #1f1f1f;
   --text-soft: #4d4d4d;
@@ -16,37 +17,48 @@
   --text-inverse: #fcfcfc;
   --text-inverse-soft: #e6e6e6;
   --text-inverse-muted: #b3b3b3;
+
+  --brand-500: #ffc91f;
+  --brand-600: #ffb81f;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--surface);
-  --color-background-hover: var(--surface-hover);
-  --color-background-muted: var(--surface-muted);
+  --surface-a: var(--neutral-100);
+  --surface-b: var(--neutral-200);
+  --surface-a-hover: var(--neutral-200);
 
-  --color-background-inverse: var(--surface-inverse);
-  --color-background-inverse-hover: var(--surface-inverse-hover);
+  --primary: var(--brand-500);
+  --primary-hover: var(--brand-600);
+  --text-on-primary: var(--neutral-900);
 
-  --color-text-strong: var(--text);
-  --color-text: var(--text-soft);
-  --color-text-muted: var(--text-muted);
-  --color-text-inverse: var(--text-inverse);
-  --color-text-inverse-soft: var(--text-inverse-soft);
+  --text-strong: var(--neutral-900);
+  --text-medium: var(--neutral-800);
+  --text-muted: var(--neutral-700);
+
+  --border-accent: var(--primary);
+  --border-strong: var(--text-strong);
+  --border-medium: var(--text-medium);
+  --border-muted: var(--text-muted);
 }
 
 body.dark {
-  --color-background: var(--surface-inverse);
-  --color-background-hover: var(--surface-inverse-hover);
-  --color-background-muted: var(--surface-inverse-muted);
+  --surface-a: var(--neutral-900);
+  --surface-b: var(--neutral-800);
+  --surface-a-hover: var(--neutral-800);
 
-  --color-background-inverse: var(--surface);
-  --color-background-hover-inverse: var(--surface-hover);
+  --primary: var(--brand-500);
+  --primary-hover: var(--brand-600);
+  --text-on-primary: var(--neutral-900);
 
-  --color-text-strong: var(--text-inverse);
-  --color-text: var(--text-inverse-soft);
-  --color-text-muted: var(--text-inverse-muted);
-  --color-text-inverse: var(--text);
-  --color-text-inverse-soft: var(--text-soft);
+  --text-strong: var(--neutral-100);
+  --text-medium: var(--neutral-200);
+  --text-muted: var(--neutral-300);
+
+  --border-accent: var(--primary);
+  --border-strong: var(--text-strong);
+  --border-medium: var(--text-medium);
+  --border-muted: var(--text-muted);
 }
 
 /* *,
@@ -80,4 +92,15 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   margin: 0;
+}
+
+.section {
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 1rem;
+  }
 }

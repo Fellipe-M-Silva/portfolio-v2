@@ -5,7 +5,7 @@ import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
-const scrollThreshold = 100
+const scrollThreshold = 10
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > scrollThreshold
@@ -25,12 +25,10 @@ onUnmounted(() => {
 <template>
   <header :class="{ scrolled: isScrolled, unscrolled: !isScrolled }">
     <div class="left-container">
-      <div class="photo-container" id="photo-container">
-        <img src="../assets/media/photo.png" alt="Foto de Fellipe" class="photo" />
-      </div>
+      <img src="../assets/logo.svg" alt="Logo" />
       <div class="name-title">
-        <h1 class="name">Fellipe Mayan</h1>
-        <p class="body-sm">Designer de Produto</p>
+        <h1 class="name" id="my-name">Fellipe Mayan</h1>
+        <!-- <p class="body-sm">Designer de Produto</p> -->
       </div>
     </div>
     <nav>
@@ -41,14 +39,16 @@ onUnmounted(() => {
     </nav>
 
     <div class="right-container">
+      <!--
       <div class="socials">
         <a class="title-sm" href="#" target="_blank">E-mail</a>
         <a class="title-sm" href="#" target="_blank">LinkedIn</a>
         <a class="title-sm" href="#" target="_blank">Behance</a>
         <a class="title-sm" href="#" target="_blank">Dribbble</a>
-      </div>
+      </div> -->
       <ThemeToggle />
     </div>
+    <hr class="border-bottom" :class="{ scrolled: isScrolled, unscrolled: !isScrolled }" />
   </header>
 </template>
 
@@ -56,39 +56,38 @@ onUnmounted(() => {
 header {
   display: grid;
   align-self: stretch;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   row-gap: 1rem;
   column-gap: 1rem;
   grid-template-rows: repeat(1, minmax(0, 1fr));
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
   width: 100%;
+  height: 5rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
 
-  transition: all 0.3s ease-in-out;
+  transition:
+    all 0.3s ease-in-out,
+    background-color 0.1s ease-in-out,
+    z-index 0.3s ease-in-out;
 }
 
 header.scrolled {
-  background-color: var(--color-background);
-  height: 5rem;
+  background-color: var(--surface-a);
+  z-index: 1001;
 }
 
 header.unscrolled {
   background-color: transparent;
-  height: 8rem;
+  z-index: 1000;
 }
 
 .left-container {
-  display: grid;
-  row-gap: 1rem;
-  column-gap: 1rem;
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  grid-row: 1 / span 1;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
   grid-column: 1 / span 4;
 
   transition: grid-column 0.5s ease-in-out;
@@ -133,8 +132,9 @@ header.scrolled .photo-container {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  grid-row: 1 / span 1;
-  grid-column: 2 / span 3;
+  color: var(--text-strong);
+  /* grid-row: 1 / span 1;
+  grid-column: 1 / span 4; */
 
   transition: grid-column 0.5s ease-in-out;
 }
@@ -144,9 +144,9 @@ header.scrolled .name-title {
 }
 
 .body-sm {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-0.5rem);
 
   transition: all 0.2s ease-in-out;
 }
@@ -158,7 +158,8 @@ header.scrolled .body-sm {
 
 nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: end;
   gap: 0;
   flex: 1 0 0;
   grid-row: 1 / span 1;
@@ -166,7 +167,7 @@ nav {
 }
 
 nav a {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   text-decoration: none;
   display: inline-block;
   padding: 0.5rem 0.25rem 0.5rem 0.5rem;
@@ -182,18 +183,19 @@ nav :last-child {
 }
 
 nav a:hover {
-  color: var(--color-text-strong);
-  background-color: var(--color-background-hover);
+  color: var(--text-strong);
+  background-color: var(--surface-a-hover);
 }
 
 nav a:active {
-  color: var(--color-text-strong);
+  color: var(--text-strong);
 }
 
 .right-container {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-end;
+  /* justify-content: space-between; */
   grid-row: 1 / span 1;
   grid-column: 9 / span 4;
 }
@@ -201,7 +203,7 @@ nav a:active {
 .socials {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   grid-row: 1 / span 1;
   grid-column: 9 / span 4;
 
@@ -224,13 +226,52 @@ header.scrolled .socials {
 }
 
 .socials a:hover {
-  color: var(--color-text-strong);
-  background-color: var(--color-background-hover);
+  color: var(--text-strong);
+  background-color: var(--surface-a-hover);
 }
 
 .right {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.border-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: -2px;
+  z-index: 1000;
+  display: block;
+  height: 1px;
+  border: none;
+  background-color: var(--border-strong);
+  transition: all 0.3s ease-in-out;
+}
+
+.border-bottom.scrolled {
+  width: 100vw;
+  left: 0px;
+}
+
+.border-bottom.unscrolled {
+  width: 0vw;
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  nav {
+    display: none;
+  }
+
+  .left-container {
+    grid-column: 1 / span 3;
+  }
+  .right-container {
+    grid-column: 4 / span 1;
+    justify-content: flex-end;
+  }
 }
 </style>
