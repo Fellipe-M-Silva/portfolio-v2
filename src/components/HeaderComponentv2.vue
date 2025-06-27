@@ -6,19 +6,59 @@ import { onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
 const scrollThreshold = 10
+const activeSection = ref('')
+
+const sections = ['projects-section', 'services-section', 'about-section', 'contact-section']
+let observers = []
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > scrollThreshold
 }
 
+const scrollTo = (elementId) => {
+  const element = document.getElementById(elementId)
+  if (element) {
+    activeSection.value = elementId
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const setupIntersectionObserver = () => {
+  const observerOptions = {
+    // root: null, // Observa em relação à viewport
+    rootMargin: '-50% 0px -50% 0px', // Aciona quando o meio da seção está na viewport
+    threshold: 0, // Não é usado diretamente com rootMargin negativo
+  }
+
+  observers.forEach((obs) => obs.disconnect())
+  observers = []
+
+  sections.forEach((sectionId) => {
+    const sectionElement = document.getElementById(sectionId)
+    if (sectionElement) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            activeSection.value = entry.target.id
+          }
+        })
+      }, observerOptions)
+      observer.observe(sectionElement)
+      observers.push(observer)
+    }
+  })
+}
+
 onMounted(() => {
   console.log('Adicionando listener de scroll')
   window.addEventListener('scroll', handleScroll)
+  setupIntersectionObserver()
 })
 
 onUnmounted(() => {
   console.log('Removendo listener de scroll')
   window.removeEventListener('scroll', handleScroll)
+  observers.forEach((observer) => observer.disconnect())
 })
 </script>
 
@@ -28,14 +68,37 @@ onUnmounted(() => {
       <img src="../assets/logo.svg" alt="Logo" />
       <div class="name-title">
         <h1 class="name" id="my-name">Fellipe Mayan</h1>
-        <!-- <p class="body-sm">Designer de Produto</p> -->
       </div>
     </div>
     <nav>
-      <a class="title-sm nav-link" href="#">Projetos,</a>
-      <a class="title-sm nav-link" href="#">Serviços,</a>
-      <a class="title-sm nav-link" href="#">Sobre,</a>
-      <a class="title-sm nav-link" href="#">Contato</a>
+      <a
+        class="title-sm nav-link"
+        href="#"
+        :class="{ 'active-link': activeSection === 'projects-section' }"
+        @click.prevent="scrollTo('projects-section')"
+        >Projetos,</a
+      >
+      <a
+        class="title-sm nav-link"
+        href="#"
+        :class="{ 'active-link': activeSection === 'services-section' }"
+        @click.prevent="scrollTo('services-section')"
+        >Serviços,</a
+      >
+      <a
+        class="title-sm nav-link"
+        href="#"
+        :class="{ 'active-link': activeSection === 'about-section' }"
+        @click.prevent="scrollTo('about-section')"
+        >Sobre,</a
+      >
+      <a
+        class="title-sm nav-link"
+        href="#"
+        :class="{ 'active-link': activeSection === 'contact-section' }"
+        @click.prevent="scrollTo('contact-section')"
+        >Contato</a
+      >
     </nav>
 
     <div class="right-container">
@@ -61,6 +124,7 @@ header {
   column-gap: 1rem;
   grid-template-rows: repeat(1, minmax(0, 1fr));
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  background-color: var(--surface-a);
 
   width: 100%;
   height: 5rem;
@@ -172,9 +236,7 @@ nav a {
   display: inline-block;
   padding: 0.5rem 0.25rem 0.5rem 0.5rem;
   border-radius: 0.25rem;
-  transition:
-    color 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -187,7 +249,8 @@ nav a:hover {
   background-color: var(--surface-a-hover);
 }
 
-nav a:active {
+nav a.active-link {
+  font-weight: 600;
   color: var(--text-strong);
 }
 

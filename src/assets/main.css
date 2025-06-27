@@ -6,10 +6,13 @@
   margin: 0;
   padding: 0;
 }
-/*
+
 #app {
-  margin: 0;
-} */
+  font-family: 'Geist', sans-serif;
+  color: var(--text-strong);
+  background-color: var(--surface-a);
+  min-height: 100vh;
+}
 
 .container {
   padding: 1.5rem;

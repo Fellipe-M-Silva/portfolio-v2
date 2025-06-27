@@ -29,7 +29,7 @@ const description = ref('Descrição curta do projeto, com informações básica
 <style scoped>
 article.project-card {
   display: flex;
-  /* background-color: var(--surface-a); */
+  background-color: var(--surface-a);
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-medium);
   gap: 1rem;
@@ -103,5 +103,35 @@ h4 {
 article.project-card:hover .overlay {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  article.project-card {
+    flex-direction: column;
+  }
+
+  article.project-card * {
+    align-self: stretch;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  h3.project-number {
+    text-align: left;
+    flex: 0 0 auto;
+  }
+
+  .project-image {
+    flex: 0 0 auto;
+    /* width: 200px; Adjust as needed */
+    /* height: auto; Maintain aspect ratio */
+  }
+
+  .project-data {
+    flex: 1;
+  }
 }
 </style>
