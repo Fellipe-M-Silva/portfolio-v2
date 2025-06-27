@@ -40,7 +40,7 @@ onMounted(() => {
   <main>
     <HeaderComponentv2 />
 
-    <div class="hero-section section" id>
+    <div class="hero-section section" id="hero-section">
       <div class="social-link" id="email">
         <a class="title-sm" href="#" target="_blank">E-mail</a>
       </div>
@@ -229,17 +229,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-main {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--surface-a);
-}
-
 .hero-section {
-  height: 100vh;
+  max-height: 100vh;
   background-color: var(--surface-a);
 
   display: grid;
@@ -472,24 +463,21 @@ main {
 }
 
 .about-left-container {
-  /* display: flex;
-  align-items: flex-start; */
-  /* flex-direction: column; */
-  display: grid;
-  grid-template-rows: repeat(6, minmax(0, 1fr));
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
+  /* display: grid;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr)); */
+  /* align-items: flex-start;
+  justify-content: flex-start; */
+  gap: 2rem;
   flex: 1 0 0;
   position: sticky;
   top: 7rem;
-  height: calc(100vh - 9rem);
 }
 
 .about-left-container h4 {
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 6;
   color: var(--text-muted);
 }
 
@@ -500,24 +488,16 @@ main {
 }
 
 .about-left-container p {
-  grid-row: 2 / span 3;
-  grid-column: 1 / span 6;
   color: var(--text-strong);
 }
 
 .about-left-container img {
+  max-width: 200px;
   width: 100%;
   height: auto;
   border-radius: 0.25rem;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  grid-row: 6 / span 1;
-  grid-column: 1 / span 2;
-  align-self: end;
-}
-
-.about-left-container img @media (prefers-color-scheme: dark) {
-  mix-blend-mode: screen;
 }
 
 .about-right-container {
@@ -583,5 +563,107 @@ main {
     grid-row: 2 / span 1;
     grid-column: 4 / span 1;
   }
+
+  #services-section h4 {
+    position: inherit;
+  }
+
+  .project-list-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-container-list {
+    background-color: var(--surface-a);
+    z-index: 30;
+  }
+  .service-container {
+    flex-direction: column;
+  }
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    position: inherit;
+    flex: 1 0 0;
+  }
+
+  #about-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .about-left-container {
+    display: flex;
+    flex-direction: column;
+    position: inherit;
+    height: auto;
+  }
+
+  .about-right-container {
+    padding-top: 2rem;
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1 0 0;
+  }
+
+  .about-right-container :last-child {
+    border-bottom: none;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1200px) {
+  .hero-section {
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hero-section h1 {
+    grid-row: 5 / span 4;
+    grid-column: 1 / span 4;
+  }
+
+  .welcome-message {
+    grid-row: 9 / span 2;
+    grid-column: 2 / span 3;
+  }
+
+  .hero-welcome-separator {
+    grid-row: 9 / span 1;
+    grid-column: 1 / span 1;
+    margin-top: 0.75rem;
+  }
+
+  #email {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+  }
+  #linkedin {
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+  }
+  #behance {
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 1;
+  }
+  #dribbble {
+    grid-row: 2 / span 1;
+    grid-column: 4 / span 1;
+  }
+
+  /* .project-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  } */
+
+  /* article.project-card {
+    flex: 1 0 calc(50% - 1rem);
+  } */
 }
 </style>
