@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
 import HeaderComponentv2 from '../components/HeaderComponentv2.vue'
-import ProjectCard from '@/components/ProjectCard.vue'
+import ProjectCard from '../components/ProjectCard.vue'
 import CustomCursor from '../components/CustomCursor.vue'
-console.log('HomeView loaded')
+import FooterComponent from '../components/FooterComponent.vue'
 
 const updateTime = () => {
   const now = new Date() // Pega a data e hora do sistema do usuário
@@ -22,6 +22,13 @@ const updateTime = () => {
   }
 }
 
+const scrollToProjects = () => {
+  const projectsSection = document.getElementById('projects-section')
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 onMounted(() => {
   console.log('HomeView mounted')
   updateTime()
@@ -32,7 +39,8 @@ onMounted(() => {
 <template>
   <main>
     <HeaderComponentv2 />
-    <div class="hero-section section">
+
+    <div class="hero-section section" id>
       <div class="social-link" id="email">
         <a class="title-sm" href="#" target="_blank">E-mail</a>
       </div>
@@ -51,6 +59,7 @@ onMounted(() => {
       </h1>
 
       <div class="hero-welcome-separator"><hr /></div>
+
       <div class="welcome-message">
         <p class="body-md">
           Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor sagittis, nec dignissim
@@ -58,11 +67,13 @@ onMounted(() => {
           sagittis, nec dignissim sem sollicitudin.
         </p>
         <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
-        <button class="scroll-down title-sm">Veja mais ↓</button>
+        <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
       </div>
     </div>
 
-    <div id="projects-section section" class="projects-section">
+    <div class="separator section"><hr class="divider" /></div>
+
+    <div class="section" id="projects-section">
       <div class="project-list-container">
         <div class="left-container">
           <h4 style="color: var(--text-muted)">[Projetos selecionados]</h4>
@@ -118,6 +129,100 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
+    <div class="separator section"><hr class="divider" /></div>
+
+    <div class="section" id="services-section">
+      <div class="service-container-list">
+        <h4 style="color: var(--text-muted)">[Serviços]</h4>
+        <div class="service-container">
+          <div class="left-container"><h2>UX/UI Design</h2></div>
+          <div class="right-container">
+            <p class="body-md">
+              Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum
+              magna. Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida,
+              dignissim nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec
+              aliquet convallis, nisl neque luctus arcu, id porta libero tortor eu enim. Fusce id
+              magna molestie, feugiat justo vel, dapibus odio.
+            </p>
+
+            <ul>
+              <li class="list-item">01 Pesquisa de usuário</li>
+              <li class="list-item">02 Wireframes e protótipos</li>
+              <li class="list-item">03 Design responsivo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-container">
+          <div class="left-container"><h2>Branding/Identidade visual</h2></div>
+          <div class="right-container">
+            <p class="body-md">
+              Curabitur auctor pulvinar leo at blandit. Morbi convallis metus nec pretium feugiat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo mattis
+              turpis. Duis mollis diam id ligula tincidunt, porta tempus erat posuere. Aenean
+              sagittis rhoncus justo nec accumsan.
+            </p>
+
+            <ul>
+              <li class="list-item">01 Sistemas de identidade visual</li>
+              <li class="list-item">02 Manual de marca</li>
+              <li class="list-item">03 Testes de usabilidade</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="separator section"><hr class="divider" /></div>
+
+    <div class="section" id="about-section">
+      <div class="about-left-container">
+        <h4 style="color: var(--text-muted)">[Sobre]</h4>
+        <p>
+          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
+          Mauris consequat libero id risus euismod placerat. <br />
+          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
+          Mauris consequat libero id risus euismod placerat.
+        </p>
+        <img id="my-photo" src="../assets/media/photo.png" alt="Foto" />
+      </div>
+      <div class="about-right-container">
+        <h4 class="title-md">Pesquisa</h4>
+        <ul>
+          <li class="body-md">Desk Research</li>
+          <li class="body-md">Testes de usabilidade</li>
+          <li class="body-md">Adobe Illustrator</li>
+          <li class="body-md">Adobe InDesign</li>
+        </ul>
+
+        <h4 class="title-md">Estratégia</h4>
+        <ul>
+          <li class="body-md">Design Systems</li>
+          <li class="body-md">Adobe Photoshop</li>
+          <li class="body-md">Adobe Illustrator</li>
+          <li class="body-md">Adobe InDesign</li>
+        </ul>
+
+        <h4 class="title-md">Visual</h4>
+        <ul>
+          <li class="body-md">Design de interface</li>
+          <li class="body-md">Prototipação de alta fidelidade</li>
+          <li class="body-md">Guias de estilo</li>
+          <li class="body-md">Identidade visual</li>
+        </ul>
+
+        <h4 class="title-md">Ferramentas</h4>
+        <ul>
+          <li class="body-md">Figma</li>
+          <li class="body-md">Adobe Photoshop</li>
+          <li class="body-md">Adobe Illustrator</li>
+          <li class="body-md">Adobe InDesign</li>
+        </ul>
+      </div>
+    </div>
+
+    <FooterComponent />
 
     <CustomCursor />
   </main>
@@ -194,11 +299,11 @@ main {
 .scroll-down {
   grid-row: 8 / span 1;
   grid-column: 11 / span 3;
-  border: none;
-  background-color: var(--primary);
-  color: var(--text-on-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  /* border: none; */
+  /* background-color: var(--primary);
+  color: var(--text-on-primary); */
+  /* padding: 0.5rem 1rem;
+  border-radius: 0.25rem; */
 }
 
 .hero-section a {
@@ -242,6 +347,21 @@ main {
   grid-column: 12 / span 1;
 }
 
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.divider {
+  /* border-top: 1px solid var(--border-muted); */
+  background-color: var(--border-muted);
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
 .projects-section {
   display: flex;
   padding: 2.5rem;
@@ -256,7 +376,6 @@ main {
   align-items: center;
   align-items: flex-start;
   gap: 1rem;
-  border-top: 1px solid var(--border-strong);
   padding-top: 2rem;
 }
 
@@ -280,20 +399,151 @@ main {
   /* align-self: stretch; */
   flex: 1 0 0;
 }
-/*
-.project-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-} */
 
-/* .project-card-header {
+#services-section h4 {
+  position: sticky;
+  top: 7rem;
+}
+
+#services-section .right-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+#services-section .left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1 0 0;
+  top: 11rem;
+}
+
+#services-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+}
+
+#services-section ul li {
+  padding: 1.5rem;
+  color: var(--text-strong);
+  border-top: 1px solid var(--border-strong);
+  flex: 1 0 0;
+  width: 100%;
+}
+
+#services-section ul li:last-child {
+  color: var(--text-strong);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.service-container-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.service-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  padding-bottom: 2rem;
+}
+
+#about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  height: 100%;
+}
+
+.about-left-container {
+  /* display: flex;
+  align-items: flex-start; */
+  /* flex-direction: column; */
+  display: grid;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex: 1 0 0;
+  position: sticky;
+  top: 7rem;
+  height: calc(100vh - 9rem);
+}
+
+.about-left-container h4 {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 6;
+  color: var(--text-muted);
+}
+
+.about-left-content {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem;
-} */
+  gap: 1rem;
+}
+
+.about-left-container p {
+  grid-row: 2 / span 3;
+  grid-column: 1 / span 6;
+  color: var(--text-strong);
+}
+
+.about-left-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  grid-row: 6 / span 1;
+  grid-column: 1 / span 2;
+  align-self: end;
+}
+
+.about-left-container img @media (prefers-color-scheme: dark) {
+  mix-blend-mode: screen;
+}
+
+.about-right-container {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 1 0 0;
+}
+
+.about-right-container h4 {
+  color: var(--text-muted);
+}
+
+.about-right-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-strong);
+}
 
 @media screen and (max-width: 480px) {
   .hero-section {

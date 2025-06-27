@@ -6,6 +6,8 @@ const isCursorFilled = ref(false)
 const message = ref(' ')
 const showMessage = ref(false)
 
+let messageClearTimeout = null 
+
 const handleMouseMove = (event) => {
   if (isCursorVisible.value) {
     const cursor = document.querySelector('.custom-cursor')
@@ -17,26 +19,71 @@ const handleMouseMove = (event) => {
 }
 
 const handleMouseOver = (event) => {
-  const photoContainer = document.getElementById('my-name')
-  const projectCard = document.querySelector('.project-card')
-  if (photoContainer && photoContainer.contains(event.target)) {
-    console.log('Mouse over my name')
-    message.value = 'oi :)'
-    showMessage.value = true
-    isCursorFilled.value = true
-    return
+  const target = event.target
+
+  const hasClass = (el, className) => {
+    if (!el) return false
+    let current = el
+    while (current && current !== document.body) {
+      if (current.classList && current.classList.contains(className)) {
+        return true
+      }
+      current = current.parentElement
+    }
+    return false
   }
 
-  if (projectCard && projectCard.contains(event.target)) {
-    message.value = 'ver projeto →'
-    showMessage.value = true
-    isCursorFilled.value = true
-    return
+  if (messageClearTimeout) {
+    clearTimeout(messageClearTimeout)
+    messageClearTimeout = null
   }
 
-  showMessage.value = false
-  isCursorFilled.value = false
-  message.value = ''
+  let nextMessage = ''
+  let nextShowMessage = false
+  let nextIsCursorFilled = false
+  let nextIsCursorVisible = true 
+
+  if (hasClass(target, 'primary')) {
+    nextIsCursorVisible = false
+    nextIsCursorFilled = false
+  } else if (hasClass(target, 'social-link')) {
+    nextMessage = '↗'
+    nextShowMessage = true
+    nextIsCursorFilled = true
+  } else if (
+    target.id === 'my-name' ||
+    (target.parentElement && target.parentElement.id === 'my-name') || target.id === 'my-photo' || (target.parentElement && target.parentElement.id === 'my-photo')
+  ) {
+    nextMessage = 'oi :)'
+    nextShowMessage = true
+    nextIsCursorFilled = true
+  } else if (hasClass(target, 'project-card')) {
+    nextMessage = 'ver projeto →'
+    nextShowMessage = true
+    nextIsCursorFilled = true
+  }
+
+  // Aplica as mudanças no estado
+  isCursorVisible.value = nextIsCursorVisible
+  isCursorFilled.value = nextIsCursorFilled
+
+  // Lógica para a mensagem:
+  if (nextShowMessage) {
+    message.value = nextMessage
+    showMessage.value = true
+  } else {
+    // Se a mensagem ESTAVA visível e AGORA não deve estar
+    if (showMessage.value) {
+      showMessage.value = false // Isso aciona a transição CSS de saída
+      // Define um timeout para limpar o texto APÓS a transição
+      messageClearTimeout = setTimeout(() => {
+        message.value = ''
+      }, 300) // 200ms é a duração da sua transição CSS para 'transform' e 'opacity'
+    } else {
+      // Se a mensagem já não estava visível, apenas limpa o valor (redundante, mas seguro)
+      message.value = ''
+    }
+  }
 }
 
 const handleMouseEnterDocument = () => {
@@ -98,7 +145,9 @@ onUnmounted(() => {
   justify-content: center;
 
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease-out;
+  transition:
+    all 0.3s ease-out,
+    opacity 0.1s ease-out;
 }
 
 .custom-cursor.hide-cursor {
@@ -116,14 +165,16 @@ onUnmounted(() => {
 .title-md {
   white-space: nowrap;
   color: var(--text-on-primary);
-  transition:
-    transform 0.2s ease-out,
-    opacity 0.2s ease-out;
+  max-width: 1rem;
+  max-height: 1rem;
   transform: scale(0);
   opacity: 0;
+  transition: all 0.5s ease-out;
 }
 
 .title-md.show-message {
+  max-width: 10rem;
+  max-height: 10rem;
   transform: scale(1);
   opacity: 1;
 }

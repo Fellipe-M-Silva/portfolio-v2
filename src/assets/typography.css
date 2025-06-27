@@ -52,6 +52,15 @@ h4 {
   color: var(--text-soft);
 }
 
+.list-item {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-family: 'Geist Mono','Courier New', Courier, monospace;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
 .name {
   font-weight: 700;
   font-size: 1.25rem;

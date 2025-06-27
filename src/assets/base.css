@@ -6,9 +6,10 @@
   --neutral-300: #dfdfce;
   --neutral-400: #dedeba;
 
-  --neutral-700: #565639;
-  --neutral-800: #313121;
-  --neutral-900: #14140b;
+  --neutral-600: #6d6d5f;
+  --neutral-700: #4f4f40;
+  --neutral-800: #2f2f23;
+  --neutral-900: #12120c;
 
   --text: #1f1f1f;
   --text-soft: #4d4d4d;
@@ -71,8 +72,11 @@ body.dark {
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--surface-b);
   font-family:
     Inter,
     -apple-system,
@@ -96,7 +100,24 @@ body {
 
 .section {
   padding: 2rem;
-  margin: 0 auto;
+  margin: 0;
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+button.primary:hover {
+  background-color: var(--primary-hover);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
