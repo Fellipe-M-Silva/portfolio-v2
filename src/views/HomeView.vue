@@ -142,14 +142,16 @@ const projects = [
       <div class="container left col far">
         <h2 class="heading-sm">[Sobre]</h2>
         <p class="section-intro">Quem sou eu</p>
-        <div class="container close">
-          <p class="body-md">
-            Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
-            Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
-            nibh a, semper neque.
-          </p>
+        <p class="body-md">
+          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
+          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
+          nibh a, semper neque.
+        </p>
+        <div class="photo-container">
           <img class="my-photo" id="my-photo" src="../assets/media/photo.png" alt="Foto" />
         </div>
+        <!-- <div class="container close">
+        </div> -->
       </div>
 
       <div class="container right col close">
@@ -196,6 +198,32 @@ const projects = [
             <li class="body-md">Adobe InDesign</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <SectionSeparator />
+
+    <section class="section" id="contact-section">
+      <div class="container left col far">
+        <h2 class="heading-sm">[Contato]</h2>
+        <p class="section-intro">Vamos conversar</p>
+        <p class="body-md half-width">
+          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
+          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
+          nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
+          convallis, nisl neque luctus arcu, id porta libero tortor eu enim. Fusce id magna
+          molestie, feugiat justo vel, dapibus odio.
+        </p>
+      </div>
+      <div class="container right col close">
+        <h4 class="heading-sm">Manda uma mensagem</h4>
+        <p class="body-md">
+          <a href="mailto:contato@fellipemayan.com">contato@fellipemayan.com</a>
+        </p>
+        <h4 class="heading-sm">Manda um alô :)</h4>
+        <p class="body-md">
+          <a href="tel:+5588988621412">(88) 98862-1412</a>
+        </p>
       </div>
     </section>
 
@@ -246,10 +274,30 @@ const projects = [
   border-bottom: 1px solid var(--border-strong);
 }
 
-.my-photo {
-  width: calc(50% - 0.5rem);
-  border-radius: 0.25rem;
+#about-section .left {
+  height: calc(100vh - 9rem);
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   aspect-ratio: 3 / 4;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  max-width: calc(50% - 0.5rem);
+}
+
+.my-photo {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.my-photo:hover {
+  transform: scale(1.05);
 }
 
 .about-right-container {
@@ -270,6 +318,5 @@ const projects = [
   align-items: flex-start;
   align-self: stretch;
   padding-bottom: 2rem;
-  /* border-bottom: 1px solid var(--border-strong); */
 }
 </style>

@@ -3,10 +3,12 @@ import { ref } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
 import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
+import NavigatioinMenu from './NavigatioinMenu.vue'
 
 const isScrolled = ref(false)
 const scrollThreshold = 10
 const activeSection = ref('')
+const isMenuVisible = ref(false)
 
 const sections = ['projects-section', 'services-section', 'about-section', 'contact-section']
 let observers = []
@@ -110,9 +112,14 @@ onUnmounted(() => {
 
     <div class="right-container">
       <ThemeToggle />
+      <button class="ghost icon-button" @click="isMenuVisible = true">
+        <span class="material-icons"> menu </span>
+      </button>
     </div>
     <hr class="border-bottom" :class="{ scrolled: isScrolled, unscrolled: !isScrolled }" />
   </header>
+
+  <NavigatioinMenu v-model:isVisible="isMenuVisible" />
 </template>
 
 <style scoped>
@@ -277,14 +284,14 @@ nav a.active-link {
     grid-column: 1 / span 2;
   }
 
-  nav {
+  /* nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0;
     flex: 1 0 0;
     grid-column: 4 / span 1;
-  }
+  } */
 
   header.unscrolled .socials {
     display: none;
@@ -318,6 +325,22 @@ nav a.active-link {
   .right-container {
     justify-content: flex-end;
     grid-column: 6 / span 1;
+  }
+}
+
+/* que beleza de responsividade */
+@media screen and (min-width: 900px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    flex: 1 0 0;
+    grid-column: 4 / span 1;
+  }
+
+  .right-container .icon-button {
+    display: none;
   }
 }
 

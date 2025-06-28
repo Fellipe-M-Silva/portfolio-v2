@@ -211,6 +211,31 @@ button.secondary:hover {
   cursor: pointer;
 }
 
+button.ghost {
+  background-color: var(--surface-a);
+  color: var(--text-medium);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+button.ghost:hover {
+  background-color: var(--surface-a-hover);
+  cursor: pointer;
+}
+
+.icon-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .identation {
   margin-top: 0.75rem;
   height: 1px;
