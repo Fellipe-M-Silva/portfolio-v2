@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hero-section section" id="hero-section">
+  <section class="hero-section section" id="hero-section">
     <div class="social-link" id="link-1">
       <a class="title-sm" href="#" target="_blank">E-mail</a>
     </div>
@@ -59,7 +59,7 @@ onMounted(() => {
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
       <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -72,8 +72,7 @@ onMounted(() => {
   grid-template-rows: repeat(12, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  /* max-height: 100vh; */
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
   align-self: stretch;
   flex: 1 0 0;
 }
@@ -231,6 +230,7 @@ h1 {
 
 @media screen and (min-width: 1200px) {
   .hero-section {
+    min-height: 100vh;
     grid-template-rows: repeat(8, minmax(0, 1fr));
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }

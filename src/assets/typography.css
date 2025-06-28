@@ -26,6 +26,16 @@ h4 {
   color: var(--text-muted);
 }
 
+.heading-sm {
+  font-family: 'Geist Mono';
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5rem; /* 200% */
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
 h1 {
   font-weight: 700;
   font-size: 2rem;
@@ -50,6 +60,14 @@ h4 {
   line-height: 2.5rem;
   text-transform: uppercase;
   color: var(--text-soft);
+}
+
+.section-intro {
+  font-family: 'Geist', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.5rem; /* 125% */
 }
 
 .list-item {
@@ -91,6 +109,7 @@ h4 {
 }
 
 .body-md {
+  color: var(--text-medium);
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;

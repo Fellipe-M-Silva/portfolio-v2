@@ -8,7 +8,7 @@ const backToTop = () => {
 </script>
 
 <template>
-  <footer class="container">
+  <footer class="container col far">
     <div>
       <button id="back-to-top" class="primary title-md" @click="backToTop">Voltar ao topo ↑</button>
     </div>
@@ -41,12 +41,14 @@ footer {
 
 .footer-content {
   display: flex;
-  /* flex-direction: column; */
+  /* flex-directi1on: column; */
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .footer-content * {
+  min-width: 280px;
   flex: 1 0 0;
 }
 
