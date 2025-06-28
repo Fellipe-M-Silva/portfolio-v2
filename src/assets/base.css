@@ -5,7 +5,7 @@
   --neutral-200: #ecece0;
   --neutral-300: #dfdfce;
   --neutral-400: #dedeba;
-
+  --newtral-500: #bfbf9f;
   --neutral-600: #6d6d5f;
   --neutral-700: #4f4f40;
   --neutral-800: #2f2f23;
@@ -30,6 +30,7 @@
   --surface-a: var(--neutral-100);
   --surface-b: var(--neutral-200);
   --surface-a-hover: var(--neutral-200);
+  --surface-b-hover: var(--neutral-300);
 
   --primary: var(--brand-500);
   --primary-hover: var(--brand-600);
@@ -37,7 +38,7 @@
 
   --text-strong: var(--neutral-900);
   --text-medium: var(--neutral-800);
-  --text-muted: var(--neutral-700);
+  --text-muted: var(--neutral-600);
 
   --border-accent: var(--primary);
   --border-strong: var(--text-strong);
@@ -49,6 +50,7 @@ body.dark {
   --surface-a: var(--neutral-900);
   --surface-b: var(--neutral-800);
   --surface-a-hover: var(--neutral-800);
+  --surface-b-hover: var(--neutral-700);
 
   --primary: var(--brand-500);
   --primary-hover: var(--brand-600);
@@ -56,7 +58,7 @@ body.dark {
 
   --text-strong: var(--neutral-100);
   --text-medium: var(--neutral-200);
-  --text-muted: var(--neutral-300);
+  --text-muted: var(--neutral-400);
 
   --border-accent: var(--primary);
   --border-strong: var(--text-strong);
@@ -99,7 +101,8 @@ main {
   background-color: var(--surface-a);
 }
 
-section, footer {
+section,
+footer {
   padding: 1rem;
   flex: 1 0 0;
   margin: 0;
@@ -107,12 +110,13 @@ section, footer {
 
 .section {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   gap: var(--grid-gap, 1rem);
   align-items: flex-start;
   align-content: flex-start;
   align-self: stretch;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .section-intro {
@@ -120,13 +124,14 @@ section, footer {
   font-size: var(2rem);
   font-style: normal;
   font-weight: 600;
-  line-height: var(2.5rem); /* 125% */
+  line-height: var(2.5rem);
 }
 
 .container {
   display: flex;
   flex: 1 0 0;
   width: 100%;
+  min-width: none;
 }
 
 .container.col {
@@ -154,16 +159,13 @@ section, footer {
   top: 7rem;
 }
 
-.container.left.body-md {
-  width: calc(50% - 0.5rem);
-  margin-left: calc(16.67% - 0.5rem);
-}
-
 .container.right {
+  background-color: var(--surface-a);
   display: flex;
   flex: 1 0 0;
   align-items: flex-end;
-  padding-top: 4.5rem;
+  padding-top: 0;
+  z-index: 60;
 }
 
 .container.right h4 {
@@ -191,24 +193,76 @@ button.primary:hover {
   cursor: pointer;
 }
 
+button.secondary {
+  background-color: var(--surface-b);
+  color: var(--text-strong);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+button.secondary:hover {
+  background-color: var(--surface-b-hover);
+  cursor: pointer;
+}
+
 .identation {
   margin-top: 0.75rem;
   height: 1px;
   align-self: stretch;
-  width: calc(50% - 0.5rem);
+  width: calc(25% - 0.5rem);
   border: none;
   background-color: var(--border-medium);
 }
 
 @media screen and (min-width: 480px) {
-  .section, footer {
+  .section,
+  footer {
+    /* flex-direction: column;
+    flex-direction: row; */
+    padding: 1.5rem;
+  }
+
+  .left {
+    position: static;
+  }
+
+  .container.right {
+    padding-top: 0;
+    align-items: flex-start;
+    padding-top: 4.5rem;
+  }
+
+  .identation {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section,
+  footer {
+    flex-direction: row;
     padding: 2rem;
   }
 
+  .container.right {
+    padding-top: 4.5rem;
+    align-items: flex-start;
+  }
+
+  .identation {
+    width: calc(50% - 0.5rem);
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  .section, footer {
+  .section,
+  footer {
     padding: 2.5rem;
   }
 }

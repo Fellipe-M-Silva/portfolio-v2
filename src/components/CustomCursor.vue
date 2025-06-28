@@ -1,14 +1,23 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const isCursorVisible = ref(false)
 const isCursorFilled = ref(false)
 const message = ref(' ')
 const showMessage = ref(false)
+const windowWidth = ref(window.innerWidth)
 
-let messageClearTimeout = null 
+const MOBILE_BREAKPOINT = 768
+
+const shouldRenderCursor = computed(() => {
+  return windowWidth.value > MOBILE_BREAKPOINT
+})
+
+let messageClearTimeout = null
 
 const handleMouseMove = (event) => {
+  if (!shouldRenderCursor.value) return
+
   if (isCursorVisible.value) {
     const cursor = document.querySelector('.custom-cursor')
     if (cursor) {
@@ -41,9 +50,9 @@ const handleMouseOver = (event) => {
   let nextMessage = ''
   let nextShowMessage = false
   let nextIsCursorFilled = false
-  let nextIsCursorVisible = true 
+  let nextIsCursorVisible = true
 
-  if (hasClass(target, 'primary')) {
+  if (hasClass(target, 'button') || hasClass(target, 'primary') || hasClass(target, 'secondary')) {
     nextIsCursorVisible = false
     nextIsCursorFilled = false
   } else if (hasClass(target, 'social-link')) {
@@ -52,7 +61,9 @@ const handleMouseOver = (event) => {
     nextIsCursorFilled = true
   } else if (
     target.id === 'my-name' ||
-    (target.parentElement && target.parentElement.id === 'my-name') || target.id === 'my-photo' || (target.parentElement && target.parentElement.id === 'my-photo')
+    (target.parentElement && target.parentElement.id === 'my-name') ||
+    target.id === 'my-photo' ||
+    (target.parentElement && target.parentElement.id === 'my-photo')
   ) {
     nextMessage = 'oi :)'
     nextShowMessage = true
@@ -97,8 +108,17 @@ const handleMouseLeaveDocument = () => {
   isCursorFilled.value = false
 }
 
+const updateWindowWidth = () => {
+  windowWidth.value = window.innerWidth
+  if (!shouldRenderCursor.value) {
+    handleMouseLeaveDocument()
+  }
+}
+
 onMounted(() => {
   console.log('CustomCursor component mounted')
+  window.removeEventListener('resize', updateWindowWidth)
+  window.addEventListener('resize', updateWindowWidth)
   document.addEventListener('mousemove', handleMouseMove)
   document.addEventListener('mouseover', handleMouseOver)
   document.addEventListener('mouseenter', handleMouseEnterDocument)
@@ -116,6 +136,7 @@ onUnmounted(() => {
 
 <template>
   <div
+    v-if="shouldRenderCursor"
     class="custom-cursor"
     :class="{ 'cursor-filled': isCursorFilled, 'hide-cursor': !isCursorVisible }"
     @mousemove="handleMouseMove"

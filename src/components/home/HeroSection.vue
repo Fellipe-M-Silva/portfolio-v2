@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
   <section class="hero-section section" id="hero-section">
     <div class="social-link" id="link-1">
-      <a class="title-sm" href="#" target="_blank">E-mail</a>
+      <a class="title-sm" href="#" target="_blank">Instagram</a>
     </div>
     <div class="social-link" id="link-2">
       <a class="title-sm" href="#" target="_blank">LinkedIn</a>
@@ -57,7 +57,10 @@ onMounted(() => {
         sagittis, nec dignissim sem sollicitudin.
       </p>
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
-      <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
+      <div class="container close">
+        <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
+        <button class="secondary title-md">Currículo ↗</button>
+      </div>
     </div>
   </section>
 </template>
@@ -81,17 +84,17 @@ h1 {
   color: var(--text-strong);
   text-transform: uppercase;
 
-  grid-row: 6 / span 2;
-  grid-column: 1 / span 4;
+  grid-row: 2 / span 3;
+  grid-column: 1 / span 3;
 }
 
 .welcome-message {
-  grid-row: 9 / span 4;
+  grid-row: 8 / span 4;
   grid-column: 2 / span 3;
 }
 
 .hero-welcome-separator {
-  grid-row: 9 / span 1;
+  grid-row: 8 / span 1;
   grid-column: 1 / span 1;
   margin-top: 0.75rem;
 }
@@ -125,22 +128,22 @@ h1 {
 }
 
 #link-1 {
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  grid-column: 4 / span 1;
 }
 
 #link-2 {
-  grid-row: 4 / span 1;
-  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  grid-column: 4 / span 1;
 }
 
 #link-3 {
-  grid-row: 3 / span 1;
-  grid-column: 3 / span 1;
+  grid-row: 4 / span 1;
+  grid-column: 4 / span 1;
 }
 
 #link-4 {
-  grid-row: 2 / span 1;
+  grid-row: 5 / span 1;
   grid-column: 4 / span 1;
 }
 
@@ -228,7 +231,7 @@ h1 {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section {
     min-height: 100vh;
     grid-template-rows: repeat(8, minmax(0, 1fr));

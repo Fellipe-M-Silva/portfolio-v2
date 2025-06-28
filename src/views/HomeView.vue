@@ -6,6 +6,46 @@ import ProjectCard from '../components/ProjectCard.vue'
 import CustomCursor from '../components/CustomCursor.vue'
 import FooterComponent from '../components/FooterComponent.vue'
 import SectionSeparator from '../components/SectionSeparator.vue'
+
+const projects = [
+  {
+    title: 'Promptfy',
+    year: '2023',
+    tags: 'Web Design, UI/UX',
+    description: 'Um projeto de exemplo para demonstrar a funcionalidade.',
+    imageSrc:
+      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    projectUrl: 'https://example.com/project1',
+  },
+  {
+    title: 'Meu Garçom',
+    year: '2024',
+    tags: 'Desenvolvimento, Frontend',
+    description: 'Um projeto mais complexo com foco em interatividade.',
+    imageSrc:
+      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    projectUrl: 'https://example.com/project2',
+  },
+  {
+    title: 'Gestruck',
+    year: '2024',
+    tags: 'Mobile, UI',
+    description: 'Um aplicativo mobile de demonstração.',
+    imageSrc:
+      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    projectUrl: 'https://example.com/project3',
+  },
+  {
+    title: 'VáLá',
+    year: '2024',
+    tags: 'Mobile, UI',
+    description: 'Um aplicativo mobile de demonstração.',
+    imageSrc:
+      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    projectUrl: 'https://example.com/project3',
+  },
+  // ... adicione mais projetos
+]
 </script>
 
 <template>
@@ -31,47 +71,15 @@ import SectionSeparator from '../components/SectionSeparator.vue'
 
       <div class="container right col zero">
         <ProjectCard
-          title="Projeto 1"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
-        />
-        <ProjectCard
-          title="Projeto 2"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
-        />
-
-        <ProjectCard
-          title="Projeto 3"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
-        />
-        <ProjectCard
-          title="Projeto 4"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
-        />
-        <ProjectCard
-          title="Projeto 5"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
-        />
-        <ProjectCard
-          title="Projeto 6"
-          year="2024"
-          tags="Tag 1, Tag 2"
-          description="Descrição curta do projeto, com informações básicas em até três linhas"
-          imageSrc="../assets/media/placeholder.png"
+          v-for="(project, index) in projects"
+          :key="project.title"
+          :title="project.title"
+          :year="project.year"
+          :tags="project.tags"
+          :description="project.description"
+          :imageSrc="project.imageSrc"
+          :projectUrl="project.projectUrl"
+          :index="index"
         />
       </div>
     </section>

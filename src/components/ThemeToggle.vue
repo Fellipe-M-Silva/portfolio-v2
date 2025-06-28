@@ -28,13 +28,13 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   transition:
     background-color 0.3s ease-in-out,
     color 0.3s ease-in-out;
 }
 .theme-toggle:hover {
-  background-color: var(--color-background-hover);
+  background-color: var(--surface-a-hover);
   color: var(--color-text-strong);
 }
 .theme-toggle .material-icons {
