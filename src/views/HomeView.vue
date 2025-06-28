@@ -1,77 +1,21 @@
 <script setup>
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 import HeaderComponentv2 from '../components/HeaderComponentv2.vue'
+import HeroSection from '../components/home/HeroSection.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import CustomCursor from '../components/CustomCursor.vue'
 import FooterComponent from '../components/FooterComponent.vue'
+import SectionSeparator from '../components/SectionSeparator.vue'
 
-const updateTime = () => {
-  const now = new Date() // Pega a data e hora do sistema do usuário
-  const options = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-    timeZone: 'America/Fortaleza',
-  }
-  const timeString = now.toLocaleTimeString('pt-BR', options)
-
-  const currentTimeElement = document.getElementById('current-time')
-  if (currentTimeElement) {
-    currentTimeElement.innerText = timeString
-  }
-}
-
-const scrollToProjects = () => {
-  const projectsSection = document.getElementById('projects-section')
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: 'smooth' })
-  }
-}
-
-onMounted(() => {
-  console.log('HomeView mounted')
-  updateTime()
-  setInterval(updateTime, 1000)
-})
 </script>
 
 <template>
   <main>
     <HeaderComponentv2 />
 
-    <div class="hero-section section" id="hero-section">
-      <div class="social-link" id="email">
-        <a class="title-sm" href="#" target="_blank">E-mail</a>
-      </div>
-      <div class="social-link" id="linkedin">
-        <a class="title-sm" href="#" target="_blank">LinkedIn</a>
-      </div>
-      <div class="social-link" id="behance">
-        <a class="title-sm" href="#" target="_blank">Behance</a>
-      </div>
-      <div class="social-link" id="dribbble">
-        <a class="title-sm" href="#" target="_blank">Dribbble</a>
-      </div>
+    <HeroSection />
 
-      <h1 style="text-transform: uppercase">
-        Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor sagittis
-      </h1>
-
-      <div class="hero-welcome-separator"><hr /></div>
-
-      <div class="welcome-message">
-        <p class="body-md">
-          Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor sagittis, nec dignissim
-          sem sollicitudin. Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor
-          sagittis, nec dignissim sem sollicitudin.
-        </p>
-        <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
-        <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
-      </div>
-    </div>
-
-    <div class="separator section"><hr class="divider" /></div>
+    <SectionSeparator />
 
     <div class="section" id="projects-section">
       <div class="project-list-container">
@@ -130,7 +74,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="separator section"><hr class="divider" /></div>
+    <SectionSeparator />
 
     <div class="section" id="services-section">
       <div class="service-container-list">
@@ -174,7 +118,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="separator section"><hr class="divider" /></div>
+    <SectionSeparator />
 
     <div class="section" id="about-section">
       <div class="about-left-container">
@@ -229,7 +173,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.hero-section {
+/* .hero-section {
   max-height: 100vh;
   background-color: var(--surface-a);
 
@@ -290,11 +234,6 @@ onMounted(() => {
 .scroll-down {
   grid-row: 8 / span 1;
   grid-column: 11 / span 3;
-  /* border: none; */
-  /* background-color: var(--primary);
-  color: var(--text-on-primary); */
-  /* padding: 0.5rem 1rem;
-  border-radius: 0.25rem; */
 }
 
 .hero-section a {
@@ -336,22 +275,7 @@ onMounted(() => {
 #dribbble {
   grid-row: 2 / span 1;
   grid-column: 12 / span 1;
-}
-
-.separator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.divider {
-  /* border-top: 1px solid var(--border-muted); */
-  background-color: var(--border-muted);
-  border: none;
-  height: 1px;
-  width: 100%;
-}
+} */
 
 .projects-section {
   display: flex;
@@ -466,11 +390,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* display: grid;
-  grid-template-rows: repeat(6, minmax(0, 1fr));
-  grid-template-columns: repeat(6, minmax(0, 1fr)); */
-  /* align-items: flex-start;
-  justify-content: flex-start; */
   gap: 2rem;
   flex: 1 0 0;
   position: sticky;
@@ -525,7 +444,7 @@ onMounted(() => {
   border-bottom: 1px solid var(--border-strong);
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .hero-section {
     grid-template-rows: repeat(12, minmax(0, 1fr));
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -655,15 +574,5 @@ onMounted(() => {
     grid-row: 2 / span 1;
     grid-column: 4 / span 1;
   }
-
-  /* .project-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-  } */
-
-  /* article.project-card {
-    flex: 1 0 calc(50% - 1rem);
-  } */
-}
+} */
 </style>

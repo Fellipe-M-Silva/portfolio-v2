@@ -21,6 +21,8 @@
 
   --brand-500: #ffc91f;
   --brand-600: #ffb81f;
+
+  --grid-gap: 1rem;
 }
 
 /* semantic color variables for this project */
@@ -107,10 +109,26 @@ main {
 }
 
 .section {
-  padding: 2rem;
-  flex: 1;
-  /* width: 100%; */
+  padding: 1rem;
+  flex: 1 0 0;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  flex: 1 0 0;
+}
+
+.container.col {
+  flex-direction: column;
+}
+
+.container.close {
+  gap: 1rem;
+}
+
+.container.far {
+  gap: 2rem;
 }
 
 button.primary {
@@ -130,8 +148,14 @@ button.primary:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .section {
-    padding: 1rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 2.5rem;
   }
 }

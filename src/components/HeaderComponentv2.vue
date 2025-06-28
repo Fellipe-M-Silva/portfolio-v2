@@ -101,14 +101,14 @@ onUnmounted(() => {
       >
     </nav>
 
+    <div class="socials">
+      <a class="title-sm" href="#" target="_blank">Instagram</a>
+      <a class="title-sm" href="#" target="_blank">LinkedIn</a>
+      <a class="title-sm" href="#" target="_blank">Behance</a>
+      <a class="title-sm" href="#" target="_blank">Dribbble</a>
+    </div>
+
     <div class="right-container">
-      <!--
-      <div class="socials">
-        <a class="title-sm" href="#" target="_blank">E-mail</a>
-        <a class="title-sm" href="#" target="_blank">LinkedIn</a>
-        <a class="title-sm" href="#" target="_blank">Behance</a>
-        <a class="title-sm" href="#" target="_blank">Dribbble</a>
-      </div> -->
       <ThemeToggle />
     </div>
     <hr class="border-bottom" :class="{ scrolled: isScrolled, unscrolled: !isScrolled }" />
@@ -123,7 +123,7 @@ header {
   row-gap: 1rem;
   column-gap: 1rem;
   grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   background-color: var(--surface-a);
 
   width: 100%;
@@ -152,44 +152,9 @@ header.unscrolled {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 3;
 
   transition: grid-column 0.5s ease-in-out;
-}
-
-.photo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  transform: translateX(0);
-  opacity: 1;
-  width: auto;
-  border-radius: 0.25rem;
-
-  transition:
-    transform 0.5s ease-in-out,
-    opacity 0.5s ease-in-out,
-    width 0.5s ease-in-out;
-}
-
-.photo-container img {
-  align-self: stretch;
-}
-
-header.unscrolled .photo-container {
-  transform: translateX(0);
-  opacity: 1;
-  width: auto;
-}
-
-header.scrolled .photo-container {
-  transform: translate(-100%);
-  opacity: 0;
-  width: 0;
 }
 
 .name-title {
@@ -197,14 +162,9 @@ header.scrolled .photo-container {
   flex-direction: column;
   align-items: flex-start;
   color: var(--text-strong);
-  /* grid-row: 1 / span 1;
-  grid-column: 1 / span 4; */
+  grid-column: 1 / span 4;
 
   transition: grid-column 0.5s ease-in-out;
-}
-
-header.scrolled .name-title {
-  grid-column: 1 / span 4;
 }
 
 .body-sm {
@@ -221,13 +181,7 @@ header.scrolled .body-sm {
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 0;
-  flex: 1 0 0;
-  grid-row: 1 / span 1;
-  grid-column: 5 / span 4;
+  display: none;
 }
 
 nav a {
@@ -258,23 +212,16 @@ nav a.active-link {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  /* justify-content: space-between; */
   grid-row: 1 / span 1;
-  grid-column: 9 / span 4;
+  grid-column: 4 / span 1;
 }
 
 .socials {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  grid-row: 1 / span 1;
-  grid-column: 9 / span 4;
-
-  transform: flex-direction 0.5s ease-in-out;
-}
-
-header.scrolled .socials {
-  flex-direction: row;
+  display: none;
+  translate: translateX(-1rem);
+  grid-column: 9 / span 1;
+  translate: translateX(-100%);
+  transition: all 0.3s ease-in-out;
 }
 
 .socials a {
@@ -282,6 +229,7 @@ header.scrolled .socials {
   text-decoration: none;
   padding: 0.5rem 0.5rem;
   border-radius: 0.25rem;
+  white-space: nowrap;
   transition:
     color 0.3s ease-in-out,
     background-color 0.3s ease-in-out,
@@ -320,21 +268,109 @@ header.scrolled .socials {
   width: 0vw;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   header {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  nav {
-    display: none;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .left-container {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
   }
-  .right-container {
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    flex: 1 0 0;
     grid-column: 4 / span 1;
+  }
+
+  header.unscrolled .socials {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+
+    transition: all 0.3s ease-in-out;
+    grid-column: 5 / span 1;
+  }
+
+  header.scrolled .socials {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 1;
+    transform: translateX(0);
+    grid-column: 5 / span 1;
+  }
+
+  header.unscrolled .socials a {
+    transform: translateX(-20%);
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+  }
+
+  header.scrolled .socials a {
+    transform: translateX(0);
+  }
+
+  .right-container {
     justify-content: flex-end;
+    grid-column: 6 / span 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .left-container {
+    grid-column: 1 / span 4;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+    flex: 1 0 0;
+    grid-column: 6 / span 1;
+  }
+
+  header.unscrolled .socials {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+
+    transition: all 0.3s ease-in-out;
+    grid-column: 9 / span 3;
+  }
+
+  header.scrolled .socials {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 1;
+    transform: translateX(0);
+    grid-column: 9 / span 1;
+  }
+
+  header.unscrolled .socials a {
+    transform: translateX(-20%);
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+  }
+
+  header.scrolled .socials a {
+    transform: translateX(0);
+  }
+
+  .right-container {
+    justify-content: flex-end;
+    grid-column: 12 / span 1;
   }
 }
 </style>
