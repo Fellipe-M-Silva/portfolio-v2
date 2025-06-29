@@ -72,6 +72,10 @@ const handleMouseOver = (event) => {
     nextMessage = 'ver projeto →'
     nextShowMessage = true
     nextIsCursorFilled = true
+  } else if (hasClass(target, 'contact-info')) {
+    nextMessage = 'Copiar'
+    nextShowMessage = true
+    nextIsCursorFilled = true
   }
 
   // Aplica as mudanças no estado

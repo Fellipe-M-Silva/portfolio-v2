@@ -6,6 +6,10 @@ import ProjectCard from '../components/ProjectCard.vue'
 import CustomCursor from '../components/CustomCursor.vue'
 import FooterComponent from '../components/FooterComponent.vue'
 import SectionSeparator from '../components/SectionSeparator.vue'
+import ContactInfo from '@/components/ContactInfo.vue'
+import { inject } from 'vue'
+
+const showToast = inject('showToast')
 
 const projects = [
   {
@@ -215,13 +219,17 @@ const projects = [
       </div>
       <div class="container right col close">
         <h4 class="heading-sm">Manda uma mensagem</h4>
-        <p class="body-md">
-          <a href="mailto:contato@fellipemayan.com">contato@fellipemayan.com</a>
-        </p>
+        <ContactInfo
+          content="fellipemsilva.contato@gmail.com"
+          @copy-success="(message) => showToast(message, 'success')"
+          @copy-error="(message) => showToast(message, 'error')"
+        />
         <h4 class="heading-sm">Manda um alô :)</h4>
-        <p class="body-md">
-          <a href="tel:+5588988621412">(88) 98862-1412</a>
-        </p>
+        <ContactInfo
+          content="+88 99221-2586"
+          @copy-success="(message) => showToast(message, 'success')"
+          @copy-error="(message) => showToast(message, 'error')"
+        />
       </div>
     </section>
 

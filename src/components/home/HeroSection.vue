@@ -58,8 +58,8 @@ onMounted(() => {
       </p>
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
       <div class="container col closest">
-        <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
         <button class="secondary title-md">Currículo ↗</button>
+        <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
       </div>
     </div>
   </section>

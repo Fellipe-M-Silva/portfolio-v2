@@ -39,16 +39,16 @@ const formattedProjectNumber = computed(() => {
     :aria-label="`Ver projeto ${formattedProjectNumber}: ${title}`"
   >
     <article class="project-card">
-      <p class="project-number">{{ formattedProjectNumber }}</p>
+      <!-- <p class="project-number">{{ formattedProjectNumber }}</p> -->
       <div class="project-image">
         <img :src="imageSrc" :alt="`Imagem do projeto ${title}`" />
       </div>
       <div class="project-data">
         <div class="project-data-header">
-          <h3 class="title-lg">{{ title }}</h3>
+          <h3 class="title-lg">{{ formattedProjectNumber }} {{ title }}</h3>
           <p class="title-lg">{{ year }}</p>
         </div>
-        <p class="body-md">{{ tags }}</p>
+        <p class="title-sm">{{ tags }}</p>
         <p class="body-md">{{ description }}</p>
       </div>
       <div class="overlay"></div>
@@ -62,7 +62,7 @@ const formattedProjectNumber = computed(() => {
   color: inherit;
   display: flex;
   align-self: stretch;
-  flex: 1 1 10rem;
+  /* flex: 1 1 8rem; */
 }
 
 /* article {
@@ -106,14 +106,13 @@ article.project-card {
 
 .project-image {
   aspect-ratio: 4 / 3;
-  flex: 1 0 auto;
   z-index: 30;
+  overflow: hidden;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  flex: 1 0 auto;
   border-radius: 0.25rem;
   object-fit: cover;
 }
@@ -122,6 +121,7 @@ article.project-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
   z-index: 30;
 }
 
@@ -171,15 +171,10 @@ article.project-card:hover .overlay {
   }
 
   .project-image {
-    flex: 0 0 auto;
-  }
-
-  .project-image img {
-    height: 100%;
-  }
-
-  .project-data {
     flex: 1;
+  }
+  .project-data {
+    width: calc(50% - 0.5rem);
   }
 }
 </style>
