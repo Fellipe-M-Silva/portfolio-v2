@@ -111,7 +111,9 @@ h1 {
   padding: 0.5rem 0.5rem;
   border-radius: 0.25rem;
   transform: translate(-0.5rem, -0.5rem);
-  transition: all 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
 .hero-section a:hover {

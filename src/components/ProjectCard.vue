@@ -59,22 +59,21 @@ const formattedProjectNumber = computed(() => {
 <style scoped>
 .project-card-link {
   text-decoration: none;
-  color: inherit; /* Garante que a cor do texto seja herdada */
+  color: inherit;
   display: flex;
-
+  align-self: stretch;
   flex: 1 1 10rem;
 }
+
+/* article {
+  width: 100%;
+  height: 100%;
+} */
 
 .project-card-link:hover .overlay,
 .project-card-link:focus .overlay {
   transform: translateY(0);
   opacity: 1;
-}
-
-.project-card-link:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 0.5rem;
 }
 
 article.project-card {
@@ -129,17 +128,13 @@ article.project-card {
 .project-data-header {
   display: flex;
   gap: 1rem;
-  flex: 1 0 0;
+  /* flex: 1 0 0; */
 }
 
 h3 {
-  min-height: 4rem; /* Garante espaço para 2 linhas */
-  overflow: hidden;
-  display: -webkit-box; /* Para WebKit */
-  -webkit-line-clamp: 2; /* Limita a 2 linhas */
-  -webkit-box-orient: vertical; /* Direção da caixa */
-  text-overflow: ellipsis; /* Adiciona '...' */
-  white-space: normal; /* Permite que o texto quebre linhas */
+  min-height: 4rem;
+  text-overflow: ellipsis;
+  white-space: normal;
   flex: 1 0 0;
 }
 

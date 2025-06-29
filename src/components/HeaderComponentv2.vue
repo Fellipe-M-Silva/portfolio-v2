@@ -103,11 +103,11 @@ onUnmounted(() => {
       >
     </nav>
 
-    <div class="socials">
-      <a class="title-sm" href="#" target="_blank">Instagram</a>
-      <a class="title-sm" href="#" target="_blank">LinkedIn</a>
-      <a class="title-sm" href="#" target="_blank">Behance</a>
-      <a class="title-sm" href="#" target="_blank">Dribbble</a>
+    <div class="socials" :aria-hidden="!isScrolled">
+      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Instagram</a>
+      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">LinkedIn</a>
+      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Behance</a>
+      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Dribbble</a>
     </div>
 
     <div class="right-container">
@@ -189,6 +189,7 @@ header.scrolled .body-sm {
 
 nav {
   display: none;
+  transition: all 0.3s ease-in-out;
 }
 
 nav a {
@@ -197,7 +198,9 @@ nav a {
   display: inline-block;
   padding: 0.5rem 0.25rem 0.5rem 0.5rem;
   border-radius: 0.25rem;
-  transition: all 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -218,17 +221,23 @@ nav a.active-link {
 .right-container {
   display: flex;
   align-items: flex-start;
+  gap: 0.5rem;
   justify-content: flex-end;
   grid-row: 1 / span 1;
   grid-column: 4 / span 1;
 }
 
+.right-container .icon-button {
+  display: flex;
+}
+
 .socials {
-  display: none;
-  translate: translateX(-1rem);
-  grid-column: 9 / span 1;
-  translate: translateX(-100%);
-  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* display: none;
+  align-items: center;
+  gap: 0.5rem; */
 }
 
 .socials a {
@@ -237,10 +246,16 @@ nav a.active-link {
   padding: 0.5rem 0.5rem;
   border-radius: 0.25rem;
   white-space: nowrap;
+  display: inline-block;
+
+  opacity: 0;
+  transform: translateX(-3rem);
+  pointer-events: none;
+
   transition:
-    color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    pointer-events 0.3s linear;
 }
 
 .socials a:hover {
@@ -284,47 +299,17 @@ nav a.active-link {
     grid-column: 1 / span 2;
   }
 
-  /* nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    flex: 1 0 0;
-    grid-column: 4 / span 1;
-  } */
-
-  header.unscrolled .socials {
+  .socials {
     display: none;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0;
-
-    transition: all 0.3s ease-in-out;
-    grid-column: 5 / span 1;
-  }
-
-  header.scrolled .socials {
-    display: none;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 1;
-    transform: translateX(0);
-    grid-column: 5 / span 1;
-  }
-
-  header.unscrolled .socials a {
-    transform: translateX(-20%);
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-  }
-
-  header.scrolled .socials a {
-    transform: translateX(0);
   }
 
   .right-container {
     justify-content: flex-end;
     grid-column: 6 / span 1;
+  }
+
+  .right-container .icon-button {
+    display: flex;
   }
 }
 
@@ -342,6 +327,10 @@ nav a.active-link {
   .right-container .icon-button {
     display: none;
   }
+
+  .socials {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -354,46 +343,48 @@ nav a.active-link {
   }
 
   nav {
-    display: flex;
-    align-items: center;
     justify-content: flex-end;
-    gap: 0;
-    flex: 1 0 0;
     grid-column: 6 / span 1;
   }
 
-  header.unscrolled .socials {
+  .socials {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0;
-
-    transition: all 0.3s ease-in-out;
-    grid-column: 9 / span 3;
-  }
-
-  header.scrolled .socials {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 1;
-    transform: translateX(0);
     grid-column: 9 / span 1;
   }
 
   header.unscrolled .socials a {
-    transform: translateX(-20%);
-    overflow: hidden;
-    transition: all 0.3s ease-out;
+    opacity: 0;
+    transform: translateX(-2rem);
+    pointer-events: none;
+    transition-delay: 0s;
   }
 
   header.scrolled .socials a {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateX(-0.5rem);
+    pointer-events: auto;
+  }
+
+  header.scrolled .socials a:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  header.scrolled .socials a:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  header.scrolled .socials a:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  header.scrolled .socials a:nth-child(4) {
+    transition-delay: 0.4s;
   }
 
   .right-container {
     justify-content: flex-end;
     grid-column: 12 / span 1;
+  }
+
+  .right-container .icon-button {
+    display: none;
   }
 }
 </style>
