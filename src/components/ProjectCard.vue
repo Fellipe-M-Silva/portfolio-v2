@@ -128,7 +128,6 @@ article.project-card {
 .project-data-header {
   display: flex;
   gap: 1rem;
-  /* flex: 1 0 0; */
 }
 
 h3 {

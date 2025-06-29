@@ -60,7 +60,7 @@ const projects = [
       <div class="container left col far">
         <h2 class="heading-sm">[Projetos]</h2>
         <p class="section-intro">O que eu faço</p>
-        <p class="body-md half-width">
+        <p class="body-md">
           Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
           Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
           nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
@@ -90,7 +90,7 @@ const projects = [
       <div class="container left col far">
         <h2 class="heading-sm">[Serviços]</h2>
         <p class="section-intro">O que eu faço</p>
-        <p class="body-md half-width">
+        <p class="body-md">
           Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
           Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
           nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
@@ -101,9 +101,9 @@ const projects = [
 
       <div class="container right col close">
         <h4 class="heading-sm">UX/UI Design</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
-          <p class="body-md half-width">
+          <p class="body-md">
             Curabitur auctor pulvinar leo at blandit. Morbi convallis metus nec pretium feugiat.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo mattis turpis.
             Duis mollis diam id ligula tincidunt, porta tempus erat posuere. Aenean sagittis rhoncus
@@ -118,9 +118,9 @@ const projects = [
         </ul>
 
         <h4 class="heading-sm">Design gráfico</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
-          <p class="body-md half-width">
+          <p class="body-md">
             Curabitur auctor pulvinar leo at blandit. Morbi convallis metus nec pretium feugiat.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo mattis turpis.
             Duis mollis diam id ligula tincidunt, porta tempus erat posuere. Aenean sagittis rhoncus
@@ -150,13 +150,11 @@ const projects = [
         <div class="photo-container">
           <img class="my-photo" id="my-photo" src="../assets/media/photo.png" alt="Foto" />
         </div>
-        <!-- <div class="container close">
-        </div> -->
       </div>
 
       <div class="container right col close">
         <h4 class="heading-sm">Pesquisa</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
           <ul>
             <li class="body-md">Desk Research</li>
@@ -167,7 +165,7 @@ const projects = [
         </div>
 
         <h4 class="heading-sm">Estratégia</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
           <ul>
             <li class="body-md">Design Systems</li>
@@ -178,7 +176,7 @@ const projects = [
         </div>
 
         <h4 class="heading-sm">Visual</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
           <ul>
             <li class="body-md">Design de interface</li>
@@ -189,7 +187,7 @@ const projects = [
         </div>
 
         <h4 class="heading-sm">Ferramentas</h4>
-        <div class="container close">
+        <div class="container close indented">
           <hr class="identation" />
           <ul>
             <li class="body-md">Figma</li>
@@ -207,7 +205,7 @@ const projects = [
       <div class="container left col far">
         <h2 class="heading-sm">[Contato]</h2>
         <p class="section-intro">Vamos conversar</p>
-        <p class="body-md half-width">
+        <p class="body-md">
           Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
           Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
           nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
@@ -275,7 +273,7 @@ const projects = [
 }
 
 #about-section .left {
-  height: calc(100vh - 9rem);
+  height: auto;
 }
 
 .photo-container {
@@ -318,5 +316,11 @@ const projects = [
   align-items: flex-start;
   align-self: stretch;
   padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  #about-section .left {
+    height: calc(100vh - 9rem);
+  }
 }
 </style>

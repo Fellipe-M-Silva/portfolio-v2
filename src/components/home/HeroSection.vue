@@ -57,7 +57,7 @@ onMounted(() => {
         sagittis, nec dignissim sem sollicitudin.
       </p>
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
-      <div class="container close">
+      <div class="container col closest">
         <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
         <button class="secondary title-md">Currículo ↗</button>
       </div>
@@ -89,12 +89,12 @@ h1 {
 }
 
 .welcome-message {
-  grid-row: 8 / span 4;
+  grid-row: 7 / span 4;
   grid-column: 2 / span 3;
 }
 
 .hero-welcome-separator {
-  grid-row: 8 / span 1;
+  grid-row: 7 / span 1;
   grid-column: 1 / span 1;
   margin-top: 0.75rem;
 }
@@ -212,6 +212,10 @@ h1 {
     grid-column: 1 / span 2;
   }
 
+  .welcome-message .container.col {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   #link-1 {
     grid-row: 3 / span 1;
     grid-column: 3 / span 1;
