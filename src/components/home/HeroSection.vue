@@ -1,6 +1,13 @@
 <script setup>
 import { onMounted } from 'vue'
 
+const resumeUrl =
+  'https://drive.google.com/file/d/1e-abCFjrhKcuhujPkA3x8KinsLcd3pVp/view?usp=sharing'
+
+const openResume = () => {
+  window.open(resumeUrl, '_blank')
+}
+
 const updateTime = () => {
   const now = new Date() // Pega a data e hora do sistema do usuário
   const options = {
@@ -37,10 +44,10 @@ onMounted(() => {
       <a class="title-sm" href="#" target="_blank">Instagram</a>
     </div>
     <div class="social-link" id="link-2">
-      <a class="title-sm" href="#" target="_blank">LinkedIn</a>
+      <a class="title-sm" href="https://www.linkedin.com/in/fellipemsilva/" target="_blank">LinkedIn</a>
     </div>
     <div class="social-link" id="link-3">
-      <a class="title-sm" href="#" target="_blank">Behance</a>
+      <a class="title-sm" href="https://www.behance.net/fellipemayan" target="_blank">Behance</a>
     </div>
     <div class="social-link" id="link-4">
       <a class="title-sm" href="#" target="_blank">Dribbble</a>
@@ -58,7 +65,9 @@ onMounted(() => {
       </p>
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
       <div class="container col closest">
-        <button class="secondary title-md">Currículo ↗</button>
+        <button class="secondary title-md" id="resume-button" @click="openResume">
+          Currículo ↗
+        </button>
         <button class="primary scroll-down title-md" @click="scrollToProjects">Veja mais ↓</button>
       </div>
     </div>

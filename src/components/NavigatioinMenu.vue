@@ -54,7 +54,6 @@ const scrollToAndClose = (sectionId) => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 2rem; */
   overflow-y: auto;
 }
 
@@ -70,7 +69,7 @@ const scrollToAndClose = (sectionId) => {
   font-size: 2rem;
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--text-strong);
+  color: var(--text-on-primary);
   cursor: pointer;
 }
 
@@ -83,35 +82,32 @@ const scrollToAndClose = (sectionId) => {
 .overlay-nav .nav-link,
 .overlay-nav .social-link {
   font-size: 2rem;
-  color: var(--text-medium);
+  color: var(--text-on-primary);
   padding: 2rem;
   text-decoration: none;
-  border-bottom: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--text-on-primary);
   transition: all 0.3s ease-in-out;
 }
 
 .overlay-nav .nav-link:hover,
 .overlay-nav .social-link:hover {
-  color: var(--text-strong);
+  color: var(--text-on-primary);
   background-color: var(--primary-hover);
 }
 
 .overlay-nav .nav-link:focus,
 .overlay-nav .social-link:focus {
-  color: var(--text-strong);
+  color: var(--text-on-primary);
   background-color: var(--primary-hover);
 }
 
-/* Transições (opcional, mas recomendado para um overlay) */
 .menu-overlay-enter-active,
 .menu-overlay-leave-active {
-  transition:
-    /* opacity 0.1s ease-out, */ transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .menu-overlay-enter-from,
 .menu-overlay-leave-to {
-  /* opacity: 0; */
-  transform: translateY(100%); /* Desliza de cima para baixo */
+  transform: translateY(100%); 
 }
 </style>

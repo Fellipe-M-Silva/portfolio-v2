@@ -326,6 +326,10 @@ const projects = [
   padding-bottom: 2rem;
 }
 
+#contact-section .right {
+  align-items: flex-start;
+}
+
 @media screen and (min-width: 1200px) {
   #about-section .left {
     height: calc(100vh - 9rem);

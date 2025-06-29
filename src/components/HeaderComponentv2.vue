@@ -68,9 +68,7 @@ onUnmounted(() => {
   <header :class="{ scrolled: isScrolled, unscrolled: !isScrolled }">
     <div class="left-container">
       <img src="../assets/logo.svg" alt="Logo" />
-      <div class="name-title">
-        <h1 class="name" id="my-name">Fellipe Mayan</h1>
-      </div>
+      <h1 class="name" id="my-name">Fellipe Mayan</h1>
     </div>
     <nav>
       <a
@@ -157,11 +155,23 @@ header.unscrolled {
 
 .left-container {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: flex-start;
-  grid-column: 1 / span 3;
+  align-items: center;
+  grid-column: 1 / span 1;
 
   transition: grid-column 0.5s ease-in-out;
+}
+
+.left-container h1 {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.left-container img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
 }
 
 .name-title {
@@ -235,9 +245,7 @@ nav a.active-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* display: none;
-  align-items: center;
-  gap: 0.5rem; */
+  grid-column: 3 / span 1;
 }
 
 .socials a {
@@ -299,6 +307,15 @@ nav a.active-link {
     grid-column: 1 / span 2;
   }
 
+  .left-container h1 {
+    font-size: 1.25rem;
+  }
+
+  .left-container img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
   .socials {
     display: none;
   }

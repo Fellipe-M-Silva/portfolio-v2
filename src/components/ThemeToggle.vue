@@ -39,7 +39,7 @@ onMounted(() => {
   border: none;
   cursor: pointer;
   height: 2.5rem;
-  width: 2.5rem;
+  min-width: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
