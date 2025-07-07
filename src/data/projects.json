@@ -34,6 +34,11 @@
         "alt": "Diagrama de fluxo de usuário para o aplicativo de receitas."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Análise e Estratégia Inicial"
+      },
+      {
         "type": "text",
         "paragraph": "Através de uma extensa pesquisa com usuários e análise de concorrência, identificamos os principais pontos de dor: navegação complexa, falta de personalização e visuais pouco atraentes. Focamos em uma arquitetura de informação clara e um sistema de design que transmitisse a riqueza dos sabores."
       },
@@ -50,6 +55,11 @@
         "type": "image",
         "url": "/media/projects/placeholder.avif",
         "alt": "Montagem das telas principais do aplicativo de receitas."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Refinamento e Testes de Usabilidade"
       },
       {
         "type": "text",
@@ -95,6 +105,11 @@
         "alt": "Evolução do logotipo do Café do Sol, do antigo ao novo."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Pesquisa e Direcionamento"
+      },
+      {
         "type": "text",
         "paragraph": "Iniciamos com uma imersão profunda na história da marca, valores e público-alvo. Workshops com os proprietários e pesquisas de mercado guiaram nossas decisões de design."
       },
@@ -111,6 +126,11 @@
         "type": "image",
         "url": "/media/projects/placeholder.avif",
         "alt": "Mockups de diferentes embalagens de café com o novo design."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Aplicação e Consistência da Marca"
       },
       {
         "type": "text",
@@ -162,6 +182,11 @@
         "alt": "Mapa do site da plataforma ConnectHelp."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Pesquisa de Usuários e Necessidades"
+      },
+      {
         "type": "text",
         "paragraph": "Através de entrevistas com voluntários e representantes de ONGs, mapeamos as jornadas de usuário e identificamos os gargalos na experiência atual. A necessidade de filtros eficazes e um sistema de comunicação integrado era evidente."
       },
@@ -178,6 +203,11 @@
         "type": "image",
         "url": "/media/projects/placeholder.avif",
         "alt": "Dashboard de uma ONG na plataforma ConnectHelp, mostrando vagas e voluntários."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Iteração e Otimização"
       },
       {
         "type": "text",
@@ -234,6 +264,11 @@
         "alt": "Moodboard com inspirações visuais para o Festival EcoSounds."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Inspiração e Conceituação"
+      },
+      {
         "type": "text",
         "paragraph": "Inspiramo-nos em elementos orgânicos, texturas naturais e uma paleta de cores que evocava florestas, rios e terra. A pesquisa sobre festivais concorrentes e tendências de design para eventos guiou a fase inicial."
       },
@@ -257,8 +292,13 @@
         "alt": "Mockups de camisetas e sacolas do Festival EcoSounds."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Consistência e Aplicações"
+      },
+      {
         "type": "text",
-        "paragraph": "A identidade foi aplicada em cartazes, flyers, ingressos, sinalização do local, crachás, posts para redes sociais e merchandising. A consistência visual em todos os pontos de contato criou uma experiência imersiva para o público."
+        "paragraph": "A identidade foi aplicada em cartazes, flyers, ingressos, sinalização do local, crachás, posts para redes sociais e merchandising. Cada ponto de contato foi cuidadosamente desenhado para contar a história da marca."
       },
       {
         "type": "heading",
@@ -300,6 +340,11 @@
         "alt": "Wireframes de diferentes layouts do website da galeria de arte."
       },
       {
+        "type": "heading",
+        "level": 3,
+        "text": "Pesquisa e Referências"
+      },
+      {
         "type": "text",
         "paragraph": "Focamos em um design minimalista, onde as obras de arte fossem as protagonistas. A pesquisa incluiu a análise de websites de outras galerias renomadas e entrevistas com colecionadores para entender suas necessidades ao navegar por portfólios de arte online."
       },
@@ -316,6 +361,11 @@
         "type": "image",
         "url": "/media/projects/placeholder.avif",
         "alt": "Página de detalhe de uma obra de arte no website."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Navegação e Experiência do Usuário"
       },
       {
         "type": "text",

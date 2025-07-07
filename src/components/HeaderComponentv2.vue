@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
 import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
@@ -16,15 +16,17 @@ let observers = []
 
 const route = useRoute()
 
-const isInProjectRoute = ref(false)
+const isProjectRoute = computed(() => {
+  return route.name === 'projeto'
+})
 
-watch(
-  () => route.name,
-  (newName) => {
-    isInProjectRoute.value = newName === 'projetos'
-  },
-  { immediate: true },
-)
+// watch(
+//   () => route.name,
+//   (newName) => {
+//     isInProjectRoute.value = newName === 'projetos'
+//   },
+//   { immediate: true },
+// )
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > scrollThreshold
@@ -82,7 +84,7 @@ onUnmounted(() => {
     :class="{
       scrolled: isScrolled,
       unscrolled: !isScrolled,
-      inProject: isInProjectRoute,
+      inProject: isProjectRoute,
     }"
   >
     <div class="left-container">
@@ -93,7 +95,7 @@ onUnmounted(() => {
     </div>
     <nav>
       <router-link
-        v-if="isInProjectRoute"
+        v-if="isProjectRoute"
         class="title-sm nav-link"
         to="/"
         :class="{ 'active-link': activeSection === 'home' }"
