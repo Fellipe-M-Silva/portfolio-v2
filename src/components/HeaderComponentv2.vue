@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
 import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
-import NavigatioinMenu from './NavigatioinMenu.vue'
+import NavigationMenu from './NavigationMenu.vue'
+import { useRoute } from 'vue-router'
 
 const isScrolled = ref(false)
 const scrollThreshold = 10
@@ -12,6 +13,18 @@ const isMenuVisible = ref(false)
 
 const sections = ['projects-section', 'services-section', 'about-section', 'contact-section']
 let observers = []
+
+const route = useRoute()
+
+const isInProjectRoute = ref(false)
+
+watch(
+  () => route.name,
+  (newName) => {
+    isInProjectRoute.value = newName === 'projetos'
+  },
+  { immediate: true },
+)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > scrollThreshold
@@ -65,43 +78,60 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header :class="{ scrolled: isScrolled, unscrolled: !isScrolled }">
+  <header
+    :class="{
+      scrolled: isScrolled,
+      unscrolled: !isScrolled,
+      inProject: isInProjectRoute,
+    }"
+  >
     <div class="left-container">
-      <img src="../assets/logo.svg" alt="Logo" />
-      <h1 class="name" id="my-name">Fellipe Mayan</h1>
+      <router-link to="/" class="home-link">
+        <img src="../assets/logo.svg" alt="Logo" />
+        <h1 class="name" id="my-name">Fellipe Mayan</h1>
+      </router-link>
     </div>
     <nav>
-      <a
+      <router-link
+        v-if="isInProjectRoute"
         class="title-sm nav-link"
-        href="#"
-        :class="{ 'active-link': activeSection === 'projects-section' }"
-        @click.prevent="scrollTo('projects-section')"
-        >Projetos,</a
+        to="/"
+        :class="{ 'active-link': activeSection === 'home' }"
+        >← Voltar</router-link
       >
-      <a
-        class="title-sm nav-link"
-        href="#"
-        :class="{ 'active-link': activeSection === 'services-section' }"
-        @click.prevent="scrollTo('services-section')"
-        >Serviços,</a
-      >
-      <a
-        class="title-sm nav-link"
-        href="#"
-        :class="{ 'active-link': activeSection === 'about-section' }"
-        @click.prevent="scrollTo('about-section')"
-        >Sobre,</a
-      >
-      <a
-        class="title-sm nav-link"
-        href="#"
-        :class="{ 'active-link': activeSection === 'contact-section' }"
-        @click.prevent="scrollTo('contact-section')"
-        >Contato</a
-      >
+      <template v-else>
+        <a
+          class="title-sm nav-link"
+          href="#"
+          :class="{ 'active-link': activeSection === 'projects-section' }"
+          @click.prevent="scrollTo('projects-section')"
+          >Projetos,</a
+        >
+        <a
+          class="title-sm nav-link"
+          href="#"
+          :class="{ 'active-link': activeSection === 'services-section' }"
+          @click.prevent="scrollTo('services-section')"
+          >Serviços,</a
+        >
+        <a
+          class="title-sm nav-link"
+          href="#"
+          :class="{ 'active-link': activeSection === 'about-section' }"
+          @click.prevent="scrollTo('about-section')"
+          >Sobre,</a
+        >
+        <a
+          class="title-sm nav-link"
+          href="#"
+          :class="{ 'active-link': activeSection === 'contact-section' }"
+          @click.prevent="scrollTo('contact-section')"
+          >Contato</a
+        >
+      </template>
     </nav>
 
-    <div class="socials" :aria-hidden="!isScrolled">
+    <div class="socials" :aria-hidden="!isScrolled || isInProjectPage">
       <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Instagram</a>
       <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">LinkedIn</a>
       <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Behance</a>
@@ -110,14 +140,14 @@ onUnmounted(() => {
 
     <div class="right-container">
       <ThemeToggle />
-      <button class="ghost icon-button" @click="isMenuVisible = true">
+      <button class="ghost icon-button" @click="isMenuVisible = true" v-if="!isInProjectRoute">
         <span class="material-icons"> menu </span>
       </button>
     </div>
     <hr class="border-bottom" :class="{ scrolled: isScrolled, unscrolled: !isScrolled }" />
   </header>
 
-  <NavigatioinMenu v-model:isVisible="isMenuVisible" />
+  <NavigationMenu v-model:isVisible="isMenuVisible" />
 </template>
 
 <style scoped>
@@ -153,14 +183,26 @@ header.unscrolled {
   z-index: 1000;
 }
 
+header.inProject {
+  background-color: var(--surface-a);
+  z-index: 1001;
+}
+
+.home-link {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  align-items: center;
+}
+
 .left-container {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-start;
   align-items: center;
   grid-column: 1 / span 1;
-
-  transition: grid-column 0.5s ease-in-out;
 }
 
 .left-container h1 {
@@ -175,6 +217,7 @@ header.unscrolled {
 }
 
 .name-title {
+  text-decoration: none;
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -303,6 +346,14 @@ nav a.active-link {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  router-link {
+    text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .left-container {
     grid-column: 1 / span 2;
   }
@@ -315,7 +366,7 @@ nav a.active-link {
     width: 2rem;
     height: 2rem;
   }
-  
+
   .socials {
     display: none;
   }

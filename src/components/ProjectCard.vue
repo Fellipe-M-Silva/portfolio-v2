@@ -31,15 +31,13 @@ const formattedProjectNumber = computed(() => {
 </script>
 
 <template>
-  <a
-    :href="projectUrl"
-    target="_blank"
-    rel="noopener noreferrer"
+  <router-link
+    v-if="projectUrl"
+    to="/projetos"
     class="project-card-link"
     :aria-label="`Ver projeto ${formattedProjectNumber}: ${title}`"
   >
     <article class="project-card">
-      <!-- <p class="project-number">{{ formattedProjectNumber }}</p> -->
       <div class="project-image">
         <img :src="imageSrc" :alt="`Imagem do projeto ${title}`" />
       </div>
@@ -53,7 +51,7 @@ const formattedProjectNumber = computed(() => {
       </div>
       <div class="overlay"></div>
     </article>
-  </a>
+  </router-link>
 </template>
 
 <style scoped>
@@ -62,13 +60,7 @@ const formattedProjectNumber = computed(() => {
   color: inherit;
   display: flex;
   align-self: stretch;
-  /* flex: 1 1 8rem; */
 }
-
-/* article {
-  width: 100%;
-  height: 100%;
-} */
 
 .project-card-link:hover .overlay,
 .project-card-link:focus .overlay {

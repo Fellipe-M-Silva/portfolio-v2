@@ -1,9 +1,7 @@
 <script setup>
-// import { onMounted } from 'vue'
-import HeaderComponentv2 from '../components/HeaderComponentv2.vue'
 import HeroSection from '../components/home/HeroSection.vue'
 import ProjectCard from '../components/ProjectCard.vue'
-import CustomCursor from '../components/CustomCursor.vue'
+// import CustomCursor from '../components/CustomCursor.vue'
 import FooterComponent from '../components/FooterComponent.vue'
 import SectionSeparator from '../components/SectionSeparator.vue'
 import ContactInfo from '@/components/ContactInfo.vue'
@@ -19,7 +17,7 @@ const projects = [
     description: 'Um projeto de exemplo para demonstrar a funcionalidade.',
     imageSrc:
       'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: 'https://example.com/project1',
+    projectUrl: '/projetos/',
   },
   {
     title: 'Meu Garçom',
@@ -28,7 +26,7 @@ const projects = [
     description: 'Um projeto mais complexo com foco em interatividade.',
     imageSrc:
       'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: 'https://example.com/project2',
+    projectUrl: '/projetos/',
   },
   {
     title: 'Gestruck',
@@ -37,7 +35,7 @@ const projects = [
     description: 'Um aplicativo mobile de demonstração.',
     imageSrc:
       'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: 'https://example.com/project3',
+    projectUrl: '/projetos/',
   },
   {
     title: 'VáLá',
@@ -46,7 +44,7 @@ const projects = [
     description: 'Um aplicativo mobile de demonstração.',
     imageSrc:
       'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: 'https://example.com/project3',
+    projectUrl: '/projetos/',
   },
   // ... adicione mais projetos
 ]
@@ -54,8 +52,6 @@ const projects = [
 
 <template>
   <main>
-    <HeaderComponentv2 />
-
     <HeroSection />
 
     <SectionSeparator />
@@ -235,7 +231,7 @@ const projects = [
 
     <FooterComponent />
 
-    <CustomCursor />
+    <!-- <CustomCursor /> -->
   </main>
 </template>
 
