@@ -1,0 +1,335 @@
+[
+  {
+    "id": "app-receitas-gourmet",
+    "name": "App Receitas Gourmet: Sabor em Suas Mãos",
+    "title": "Redefinindo a experiência culinária digital com um aplicativo intuitivo e visualmente apetitoso.",
+    "caption": "Desenvolvimento completo de UX/UI para um aplicativo mobile que conecta entusiastas da culinária a receitas exclusivas e experiências gastronômicas interativas.",
+    "year": 2024,
+    "myRole": "Lead UX/UI Designer",
+    "tags": [
+      "UX Design",
+      "UI Design",
+      "Aplicativo Mobile",
+      "Design Centrado no Usuário",
+      "Prototipagem"
+    ],
+    "techniquesAndTools": ["Figma", "Miro", "User Research", "Wireframing", "Atomic Design"],
+    "coverImage": {
+      "url": "/media/projects/placeholder.jpg",
+      "alt": "Tela inicial do aplicativo de receitas com imagens de pratos coloridos."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "O Desafio: Simplificar e Inspirar"
+      },
+      {
+        "type": "text",
+        "paragraph": "O mercado de aplicativos de receitas é vasto, mas muitos falham em oferecer uma experiência verdadeiramente fluida e inspiradora. Nosso desafio foi criar um aplicativo que não só simplificasse o processo de cozinhar, mas que também incentivasse a experimentação e a paixão pela gastronomia."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Diagrama de fluxo de usuário para o aplicativo de receitas."
+      },
+      {
+        "type": "text",
+        "paragraph": "Através de uma extensa pesquisa com usuários e análise de concorrência, identificamos os principais pontos de dor: navegação complexa, falta de personalização e visuais pouco atraentes. Focamos em uma arquitetura de informação clara e um sistema de design que transmitisse a riqueza dos sabores."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Soluções de UX/UI Inovadoras"
+      },
+      {
+        "type": "text",
+        "paragraph": "Implementamos um sistema de tags inteligentes para filtragem rápida de receitas, um modo de cozimento guiado passo a passo e a integração de vídeos curtos. O design visual priorizou imagens de alta qualidade e uma tipografia legível, com uma paleta de cores que remetesse à culinária fina."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Montagem das telas principais do aplicativo de receitas."
+      },
+      {
+        "type": "text",
+        "paragraph": "Testes de usabilidade iterativos foram cruciais para refinar a interface, garantindo que usuários de todos os níveis de habilidade pudessem navegar e desfrutar do aplicativo sem frustrações. A função de 'Planejador de Refeições' se destacou como um recurso favorito."
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Resultado e Impacto"
+      },
+      {
+        "type": "text",
+        "paragraph": "O App Receitas Gourmet foi lançado com sucesso, recebendo avaliações positivas por sua facilidade de uso e beleza visual. Aumentamos o engajamento dos usuários em 40% nas primeiras semanas, provando que um bom design pode, de fato, tornar a culinária uma experiência mais doce."
+      }
+    ]
+  },
+  {
+    "id": "rebranding-cafe-do-sol",
+    "name": "Rebranding Café do Sol: Símbolo de Frescor",
+    "title": "Criação de identidade visual vibrante que revigorou uma marca tradicional de café.",
+    "caption": "Projeto de rebranding completo para uma cafeteria local, abrangendo desde o logotipo até a embalagem e materiais de marketing, refletindo sua essência artesanal e moderna.",
+    "year": 2023,
+    "myRole": "Designer Gráfico Sênior",
+    "tags": ["Design Gráfico", "Branding", "Identidade Visual", "Logotipo", "Embalagem"],
+    "techniquesAndTools": ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Tipografia"],
+    "coverImage": {
+      "url": "/media/projects/placeholder.avif",
+      "alt": "Novo logotipo do Café do Sol em embalagens e xícaras."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "O Desafio: Modernizar sem Perder a Essência"
+      },
+      {
+        "type": "text",
+        "paragraph": "O Café do Sol era uma instituição na comunidade, mas sua identidade visual estava datada. O desafio era criar um novo visual que transmitisse frescor e modernidade, sem alienar sua base de clientes fiéis ou perder o senso de tradição artesanal."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Evolução do logotipo do Café do Sol, do antigo ao novo."
+      },
+      {
+        "type": "text",
+        "paragraph": "Iniciamos com uma imersão profunda na história da marca, valores e público-alvo. Workshops com os proprietários e pesquisas de mercado guiaram nossas decisões de design."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "A Solução de Design: Sol, Grão e Simplicidade"
+      },
+      {
+        "type": "text",
+        "paragraph": "Desenvolvemos um logotipo que combinava sutilmente um grão de café e os raios de sol, utilizando uma tipografia que equilibrava o artesanal com o contemporâneo. A paleta de cores foi expandida para incluir tons terrosos e vibrantes, transmitindo energia e calor."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Mockups de diferentes embalagens de café com o novo design."
+      },
+      {
+        "type": "text",
+        "paragraph": "A aplicação da nova identidade se estendeu para embalagens de café, uniformes da equipe, sinalização da loja e materiais de marketing digital. Cada ponto de contato foi cuidadosamente desenhado para contar a história da marca."
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Impacto e Reconhecimento"
+      },
+      {
+        "type": "text",
+        "paragraph": "O rebranding foi um sucesso estrondoso, com um aumento significativo no reconhecimento da marca e nas vendas. O Café do Sol agora é percebido como uma marca moderna e autêntica, atraindo uma nova geração de amantes do café e solidificando sua posição no mercado."
+      }
+    ]
+  },
+  {
+    "id": "plataforma-voluntariado",
+    "name": "Plataforma ConnectHelp: Conectando Voluntários",
+    "title": "Design de uma plataforma web que otimiza a conexão entre voluntários e causas sociais.",
+    "caption": "Criação de uma experiência de usuário fluida para uma plataforma de voluntariado, focando na facilidade de busca de oportunidades e gerenciamento de perfis de voluntários e ONGs.",
+    "year": 2024,
+    "myRole": "UX/UI Designer",
+    "tags": [
+      "UX Design",
+      "Plataforma Web",
+      "Serviços Sociais",
+      "Wireframing",
+      "Testes de Usabilidade"
+    ],
+    "techniquesAndTools": ["Sketch", "InVision", "Axure RP", "Heuristic Evaluation"],
+    "coverImage": {
+      "url": "/media/projects/placeholder.avif",
+      "alt": "Tela de busca da plataforma ConnectHelp com filtros e resultados de voluntariado."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "O Desafio: Simplificar o Voluntariado"
+      },
+      {
+        "type": "text",
+        "paragraph": "Muitas pessoas querem ser voluntárias, mas encontram barreiras para encontrar oportunidades relevantes ou para as ONGs gerenciarem seus voluntários. O objetivo era criar uma plataforma que removesse essas barreiras, tornando o processo acessível e eficiente para ambos os lados."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Mapa do site da plataforma ConnectHelp."
+      },
+      {
+        "type": "text",
+        "paragraph": "Através de entrevistas com voluntários e representantes de ONGs, mapeamos as jornadas de usuário e identificamos os gargalos na experiência atual. A necessidade de filtros eficazes e um sistema de comunicação integrado era evidente."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Design para o Impacto Social"
+      },
+      {
+        "type": "text",
+        "paragraph": "Desenvolvemos uma interface limpa e intuitiva, com um painel de controle personalizado para voluntários e ONGs. Funcionalidades como busca avançada por causas, localização e disponibilidade foram priorizadas. O sistema de mensagens in-app facilitou a comunicação direta."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Dashboard de uma ONG na plataforma ConnectHelp, mostrando vagas e voluntários."
+      },
+      {
+        "type": "text",
+        "paragraph": "A tipografia e a paleta de cores foram escolhidas para transmitir confiança, empatia e dinamismo, incentivando a ação. Realizamos testes A/B em elementos chave para otimizar a taxa de conversão de cadastro e inscrição em vagas."
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Resultados e o Futuro"
+      },
+      {
+        "type": "text",
+        "paragraph": "A plataforma ConnectHelp superou as expectativas, facilitando milhares de conexões voluntárias em seu primeiro ano. Reduzimos o tempo médio de inscrição em 50% e recebemos feedback positivo sobre a clareza e facilidade de uso da interface, comprovando o poder do design para impulsionar o bem social."
+      }
+    ]
+  },
+  {
+    "id": "identidade-festival-musica",
+    "name": "Festival EcoSounds: Harmonia Visual",
+    "title": "Criação de identidade visual e materiais de marketing para um festival de música sustentável.",
+    "caption": "Projeto gráfico abrangente para um festival de música com foco em sustentabilidade, incluindo branding, cartazes, mídias sociais e sinalização do evento.",
+    "year": 2023,
+    "myRole": "Designer Gráfico Principal",
+    "tags": [
+      "Design Gráfico",
+      "Identidade Visual",
+      "Marketing de Eventos",
+      "Tipografia",
+      "Ilustração"
+    ],
+    "techniquesAndTools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Adobe InDesign",
+      "Procreate (Ilustração)"
+    ],
+    "coverImage": {
+      "url": "/media/projects/placeholder.avif",
+      "alt": "Cartaz principal do Festival EcoSounds com elementos naturais e musicais."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "O Desafio: Traduzir Sustentabilidade em Arte"
+      },
+      {
+        "type": "text",
+        "paragraph": "O Festival EcoSounds tinha como premissa unir música e consciência ambiental. O desafio era criar uma identidade visual que fosse ao mesmo tempo vibrante e moderna para um festival de música, mas que também comunicasse claramente seus valores de sustentabilidade e respeito à natureza."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Moodboard com inspirações visuais para o Festival EcoSounds."
+      },
+      {
+        "type": "text",
+        "paragraph": "Inspiramo-nos em elementos orgânicos, texturas naturais e uma paleta de cores que evocava florestas, rios e terra. A pesquisa sobre festivais concorrentes e tendências de design para eventos guiou a fase inicial."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "A Solução: Um Universo Visual Orgânico"
+      },
+      {
+        "type": "text",
+        "paragraph": "Desenvolvemos um logotipo fluído que incorporava um elemento de folha/som e uma tipografia que transmitia leveza e modernidade. Criamos um conjunto de ilustrações personalizadas que seriam usadas em diversos materiais, reforçando o tema da natureza."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Design de posts para redes sociais do Festival EcoSounds."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Mockups de camisetas e sacolas do Festival EcoSounds."
+      },
+      {
+        "type": "text",
+        "paragraph": "A identidade foi aplicada em cartazes, flyers, ingressos, sinalização do local, crachás, posts para redes sociais e merchandising. A consistência visual em todos os pontos de contato criou uma experiência imersiva para o público."
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Impacto e Reconhecimento"
+      },
+      {
+        "type": "text",
+        "paragraph": "O Festival EcoSounds foi um sucesso visual e de público. A identidade foi amplamente elogiada pela sua originalidade e coerência com a proposta do evento. Contribuímos significativamente para o posicionamento do festival como um evento de destaque no cenário musical e ambiental."
+      }
+    ]
+  },
+  {
+    "id": "website-galeria-arte",
+    "name": "Website Galeria Arte Moderna: Vitrine Digital",
+    "title": "Design de um website elegante e responsivo para uma galeria de arte contemporânea.",
+    "caption": "Projeto de design de interface para um website de galeria de arte, focando na apresentação imersiva das obras e na navegação intuitiva para colecionadores e entusiastas.",
+    "year": 2025,
+    "myRole": "Web Designer & UX Lead",
+    "tags": ["Web Design", "UX/UI", "Portfólio Online", "Responsividade", "Design Minimalista"],
+    "techniquesAndTools": ["Adobe XD", "HTML/CSS", "JavaScript (conceitual)", "Grid Systems"],
+    "coverImage": {
+      "url": "/media/projects/placeholder.avif",
+      "alt": "Página inicial do website da galeria de arte com destaque para uma obra."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "O Desafio: Arte na Tela"
+      },
+      {
+        "type": "text",
+        "paragraph": "Galerias de arte precisam de uma presença online que faça justiça às obras expostas, mas muitas vezes falham em criar uma experiência digital que seja tão impactante quanto a visita presencial. Nosso objetivo era criar um website que fosse uma verdadeira extensão da galeria, destacando a arte sem distrações."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Wireframes de diferentes layouts do website da galeria de arte."
+      },
+      {
+        "type": "text",
+        "paragraph": "Focamos em um design minimalista, onde as obras de arte fossem as protagonistas. A pesquisa incluiu a análise de websites de outras galerias renomadas e entrevistas com colecionadores para entender suas necessidades ao navegar por portfólios de arte online."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Design Focado na Imersão"
+      },
+      {
+        "type": "text",
+        "paragraph": "Desenvolvemos um layout em grade flexível que se adaptava perfeitamente a diferentes tamanhos de tela. As páginas de obras de arte incluíam zoom de alta resolução, informações detalhadas sobre o artista e a peça, e um formulário de contato discreto para consultas."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/placeholder.avif",
+        "alt": "Página de detalhe de uma obra de arte no website."
+      },
+      {
+        "type": "text",
+        "paragraph": "A navegação foi projetada para ser intuitiva, com um menu limpo e opções de filtro claras para artistas, estilos e coleções. A tipografia e as cores foram escolhidas para complementar a arte, sem competir com ela, mantendo um tom sofisticado."
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Impacto e Reconhecimento"
+      },
+      {
+        "type": "text",
+        "paragraph": "O website da Galeria Arte Moderna se tornou uma vitrine digital de sucesso, atraindo novos visitantes e facilitando o acesso às obras para colecionadores de todo o mundo. O feedback destacou a elegância e a facilidade de uso, resultando em um aumento de 30% nas consultas online."
+      }
+    ]
+  }
+]

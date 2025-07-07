@@ -5,49 +5,17 @@ import ProjectCard from '../components/ProjectCard.vue'
 import FooterComponent from '../components/FooterComponent.vue'
 import SectionSeparator from '../components/SectionSeparator.vue'
 import ContactInfo from '@/components/ContactInfo.vue'
-import { inject } from 'vue'
+import { inject, onMounted, ref } from 'vue'
+import projetos from '../data/projects.json'
 
 const showToast = inject('showToast')
 
-const projects = [
-  {
-    title: 'Promptfy',
-    year: '2023',
-    tags: 'Web Design, UI/UX',
-    description: 'Um projeto de exemplo para demonstrar a funcionalidade.',
-    imageSrc:
-      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: '/projetos/',
-  },
-  {
-    title: 'Meu Garçom',
-    year: '2024',
-    tags: 'Desenvolvimento, Frontend',
-    description: 'Um projeto mais complexo com foco em interatividade.',
-    imageSrc:
-      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: '/projetos/',
-  },
-  {
-    title: 'Gestruck',
-    year: '2024',
-    tags: 'Mobile, UI',
-    description: 'Um aplicativo mobile de demonstração.',
-    imageSrc:
-      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: '/projetos/',
-  },
-  {
-    title: 'VáLá',
-    year: '2024',
-    tags: 'Mobile, UI',
-    description: 'Um aplicativo mobile de demonstração.',
-    imageSrc:
-      'https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    projectUrl: '/projetos/',
-  },
-  // ... adicione mais projetos
-]
+const projects = ref([])
+
+onMounted(() => {
+  projects.value = projetos
+  console.log('Projetos carregados:', projects.value)
+})
 </script>
 
 <template>
@@ -72,13 +40,13 @@ const projects = [
       <div class="container right col zero">
         <ProjectCard
           v-for="(project, index) in projects"
-          :key="project.title"
-          :title="project.title"
+          :key="project.id"
+          :name="project.name"
           :year="project.year"
           :tags="project.tags"
-          :description="project.description"
-          :imageSrc="project.imageSrc"
-          :projectUrl="project.projectUrl"
+          :title="project.title"
+          :image="project.coverImage"
+          :projectId="project.id"
           :index="index"
         />
       </div>

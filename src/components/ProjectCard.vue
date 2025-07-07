@@ -3,51 +3,66 @@ import { computed } from 'vue'
 import { defineProps } from 'vue'
 
 const props = defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  year: Number,
+  tags: {
+    type: Array,
+    default: () => [],
+  },
   title: {
     type: String,
-    required: true, // O título é importante para acessibilidade
+    required: true,
   },
-  year: String,
-  tags: String,
-  description: String,
-  imageSrc: String,
-  projectUrl: {
-    // Adicione a prop para a URL do projeto
+  image: {
+    type: Object, // { url: string, alt: string }
+    required: true,
+    validator: (value) => typeof value.url === 'string' && typeof value.alt === 'string',
+  },
+  projectId: {
     type: String,
-    default: '#', // Forneça um default, mas use URLs reais na prática
+    required: true,
   },
   index: {
-    // Nova prop para o índice
     type: Number,
-    required: true, // O índice é necessário para o número do projeto
+    required: true,
   },
 })
 
 const formattedProjectNumber = computed(() => {
-  // Adiciona um zero à esquerda se o número for menor que 10
-  const num = props.index + 1 // Índices geralmente começam em 0, então adicione 1
+  const num = props.index + 1
   return num < 10 ? `[0${num}]` : `[${num}]`
+})
+
+const formattedTags = computed(() => {
+  return props.tags.join(', ')
+})
+
+const assetFullUrl = computed(() => {
+  return import.meta.env.BASE_URL + props.image.url
 })
 </script>
 
 <template>
   <router-link
-    v-if="projectUrl"
-    to="/projetos"
+    v-if="props.projectId"
+    :to="{ name: 'projeto', params: { id: props.projectId } }"
     class="project-card-link"
-    :aria-label="`Ver projeto ${formattedProjectNumber}: ${title}`"
+    :aria-label="`Ver projeto ${formattedProjectNumber}: ${props.name}`"
   >
     <article class="project-card">
       <div class="project-image">
-        <img :src="imageSrc" :alt="`Imagem do projeto ${title}`" />
+        <img :src="assetFullUrl" :alt="props.image.alt" />
       </div>
       <div class="project-data">
         <div class="project-data-header">
-          <h3 class="title-lg">{{ formattedProjectNumber }} {{ title }}</h3>
-          <p class="title-lg">{{ year }}</p>
+          <h3 class="title-lg">{{ formattedProjectNumber }} {{ props.name }}</h3>
+          <p class="title-lg">{{ props.year }}</p>
         </div>
-        <p class="title-sm">{{ tags }}</p>
-        <p class="body-md">{{ description }}</p>
+        <p class="body-md">{{ props.title }}</p>
+        <p class="title-sm">{{ formattedTags }}</p>
       </div>
       <div class="overlay"></div>
     </article>

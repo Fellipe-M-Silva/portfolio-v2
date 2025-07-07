@@ -1,5 +1,11 @@
 <script setup>
 import FooterComponent from '@/components/FooterComponent.vue'
+// import { ref } from 'vue'
+// import { useRoute } from 'vue-router'
+
+// const route = useRoute()
+// const project = ref(null)
+// const projectsData =
 </script>
 
 <template>
@@ -23,10 +29,6 @@ import FooterComponent from '@/components/FooterComponent.vue'
           <div class="container close project-metadata">
             <p class="title-md">Meu papel</p>
             <p class="body-md">Designer</p>
-          </div>
-          <div class="container close project-metadata">
-            <p class="title-md">Descrição</p>
-            <p class="body-md">Um projeto de exemplo usando Vue.js.</p>
           </div>
           <div class="container close project-metadata">
             <p class="title-md">Tags</p>
