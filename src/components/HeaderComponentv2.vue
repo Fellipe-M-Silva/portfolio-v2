@@ -5,11 +5,16 @@ import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
 import NavigationMenu from './NavigationMenu.vue'
 import { useRoute } from 'vue-router'
+import { socialLinks } from '@/constants/sociallinks'
 
 const isScrolled = ref(false)
 const scrollThreshold = 10
 const activeSection = ref('')
 const isMenuVisible = ref(false)
+
+const filteredSocialLinks = computed(() => {
+  return socialLinks.filter(link => link.name !== 'GitHub');
+});
 
 const sections = ['projects-section', 'services-section', 'about-section', 'contact-section']
 let observers = []
@@ -19,14 +24,6 @@ const route = useRoute()
 const isProjectRoute = computed(() => {
   return route.name === 'projeto'
 })
-
-// watch(
-//   () => route.name,
-//   (newName) => {
-//     isInProjectRoute.value = newName === 'projetos'
-//   },
-//   { immediate: true },
-// )
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > scrollThreshold
@@ -134,10 +131,15 @@ onUnmounted(() => {
     </nav>
 
     <div class="socials" :aria-hidden="!isScrolled || isInProjectPage">
-      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Instagram</a>
-      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">LinkedIn</a>
-      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Behance</a>
-      <a class="title-sm" href="#" target="_blank" :tabindex="isScrolled ? 0 : -1">Dribbble</a>
+      <a
+        v-for="(link, index) in filteredSocialLinks"
+        :key="index"
+        class="title-sm"
+        :href="link.url"
+        :target="link.target"
+        :tabindex="isScrolled && !isProjectRoute ? 0 : -1"
+        :aria-label="link.ariaLabel || link.name"
+      >{{ link.name }}</a>
     </div>
 
     <div class="right-container">

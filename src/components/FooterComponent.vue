@@ -1,4 +1,6 @@
 <script setup>
+import { socialLinks } from '@/constants/sociallinks'
+
 const backToTop = () => {
   window.scrollTo({
     top: 0,
@@ -14,20 +16,24 @@ const backToTop = () => {
     </div>
     <div class="footer-content">
       <p class="body-md">
-        Suspendisse lobortis, diam eget pellentesque malesuada, lacus ligula mollis nulla, ac
-        venenatis metus ipsum non orci.
+        Atualmente finalizando o curso de Design Digital na Universidade Federal do Ceará, Campus de
+        Quixadá.
       </p>
-      <p class="body-md">Curabitur in libero nec enim facilisis tincidunt. Sed at ligula a</p>
+      <p class="body-md">
+        No momento, estudando desenvolvimento por diversão e para melhor me comunicar com
+        desenvolvedores.
+      </p>
       <ul class="title-sm">
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">Linkedin</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">Dribbble</a></li>
+        <li v-for="(link, index) in socialLinks" :key="index">
+          <a :href="link.url" :target="link.target" :aria-label="link.ariaLabel || link.name">{{
+            link.name
+          }}</a>
+        </li>
       </ul>
       <p class="body-md">
-        Feito com ✨ <br />
-        Por Fellipe Mayan <br />
-        &copy; 2025
+        Feito em Vue com ✨ <br />
+        <i>(e com o feedback de amigos)</i><br />
+        &copy; Fellipe Mayan 2025
       </p>
     </div>
   </footer>
@@ -57,5 +63,10 @@ ul {
   flex-direction: column;
   gap: 0.5rem;
   list-style: none;
+}
+
+ul li a:hover {
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 </style>

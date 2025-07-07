@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
+import { socialLinks } from '@/constants/sociallinks'
 
 const resumeUrl =
   'https://drive.google.com/file/d/1e-abCFjrhKcuhujPkA3x8KinsLcd3pVp/view?usp=sharing'
@@ -32,36 +33,41 @@ const scrollToProjects = () => {
   }
 }
 
+const filteredSocialLinks = computed(() => {
+  return socialLinks.filter((link) => link.name !== 'GitHub')
+})
+
 onMounted(() => {
-  updateTime() // Atualiza a hora ao montar o componente
-  setInterval(updateTime, 1000) // Atualiza a hora a cada segundo
+  updateTime()
+  setInterval(updateTime, 1000)
 })
 </script>
 
 <template>
   <section class="hero-section section" id="hero-section">
-    <div class="social-link" id="link-1">
-      <a class="title-sm" href="#" target="_blank">Instagram</a>
-    </div>
-    <div class="social-link" id="link-2">
-      <a class="title-sm" href="https://www.linkedin.com/in/fellipemsilva/" target="_blank">LinkedIn</a>
-    </div>
-    <div class="social-link" id="link-3">
-      <a class="title-sm" href="https://www.behance.net/fellipemayan" target="_blank">Behance</a>
-    </div>
-    <div class="social-link" id="link-4">
-      <a class="title-sm" href="#" target="_blank">Dribbble</a>
+    <div
+      v-for="(link, index) in filteredSocialLinks"
+      :key="link.name"
+      :id="`link-${index + 1}`"
+      class="social-link"
+    >
+      <a
+        :href="link.url"
+        :target="link.target"
+        class="title-sm"
+        :aria-label="link.ariaLabel || link.name"
+        >{{ link.name }}</a
+      >
     </div>
 
-    <h1>Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor sagittis</h1>
+    <h1>Interações e experiências com estratégia e olhar apurado ✦</h1>
 
     <div class="hero-welcome-separator"><hr /></div>
 
     <div class="container col far welcome-message">
       <p class="body-md">
-        Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor sagittis, nec dignissim
-        sem sollicitudin. Proin vel scelerisque mauris. Praesent blandit lectus vitae tortor
-        sagittis, nec dignissim sem sollicitudin.
+        Designer digital em graduação com 5 anos de experiência em design de interfaces, experiência
+        do usuário e identidade visual, movido pela organização e atenção a cada detalhe.
       </p>
       <p class="title-md">Em Quixadá, CE às <span id="current-time"></span></p>
       <div class="container col closest">

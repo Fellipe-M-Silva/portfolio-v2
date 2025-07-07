@@ -1,7 +1,6 @@
 <script setup>
 import HeroSection from '../components/home/HeroSection.vue'
 import ProjectCard from '../components/ProjectCard.vue'
-// import CustomCursor from '../components/CustomCursor.vue'
 import FooterComponent from '../components/FooterComponent.vue'
 import SectionSeparator from '../components/SectionSeparator.vue'
 import ContactInfo from '@/components/ContactInfo.vue'
@@ -27,13 +26,16 @@ onMounted(() => {
     <section class="section" id="projects-section">
       <div class="container left col far">
         <h2 class="heading-sm">[Projetos]</h2>
-        <p class="section-intro">O que eu faço</p>
+        <p class="section-intro">Resultados que vão além do produto</p>
         <p class="body-md">
-          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
-          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
-          nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
-          convallis, nisl neque luctus arcu, id porta libero tortor eu enim. Fusce id magna
-          molestie, feugiat justo vel, dapibus odio.
+          A atenção ao detalhe e a organização entregam valor que vai além do esperado. Cada
+          trabalho busca não apenas criar ou melhorar produtos, mas também integrar clientes,
+          desenvolvedores e stakeholders com clareza.
+        </p>
+
+        <p class="body-md">
+          Desmistificando o design, é possível garantir que o processo seja tão eficaz quanto o
+          resultado, gerando impacto duradouro para todos.
         </p>
       </div>
 
@@ -57,49 +59,71 @@ onMounted(() => {
     <section class="section" id="services-section">
       <div class="container left col far">
         <h2 class="heading-sm">[Serviços]</h2>
-        <p class="section-intro">O que eu faço</p>
+        <p class="section-intro">Onde um designer digital atua</p>
         <p class="body-md">
-          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
-          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
-          nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
-          convallis, nisl neque luctus arcu, id porta libero tortor eu enim. Fusce id magna
-          molestie, feugiat justo vel, dapibus odio.
+          Embora seja apaixonado por projetar para experiências marcantes, minha atuação não para
+          por aí. Pense em mim como um <em>canivete-suíço:</em> conectando as pontas desde a
+          estratégia inicial do produto até a garantia da sua usabilidade e acessibilidade.
+        </p>
+        <p class="body-md">
+          Meu trabalho envolve entender o negócio e o usuário, colaborar com desenvolvedores e
+          traduzir para clientes e stakeholders como o que fazemos vai <em>gerar valor</em> para seu
+          produto.
         </p>
       </div>
 
       <div class="container right col close">
-        <h4 class="heading-sm">UX/UI Design</h4>
+        <h4 class="heading-sm">Design de interface (UI)</h4>
         <div class="container close indented">
           <hr class="identation" />
           <p class="body-md">
-            Curabitur auctor pulvinar leo at blandit. Morbi convallis metus nec pretium feugiat.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo mattis turpis.
-            Duis mollis diam id ligula tincidunt, porta tempus erat posuere. Aenean sagittis rhoncus
-            justo nec accumsan.
+            Funcionalidade e estética são essenciais para que o usuário final tenha uma boa
+            experiência de uso; ainda assim, também é importante considerar a facilidade de
+            implementação e a manutenção do produto. Além de um modelo da interface, é necessário
+            garantir um bom
+            <em>alicerce</em> que permita que o produto seja desenvolvido, mantido – e eventualmente
+            expandido – de forma eficiente.
           </p>
         </div>
 
         <ul>
-          <li class="list-item">01 Sistemas de identidade visual</li>
-          <li class="list-item">02 Manual de marca</li>
-          <li class="list-item">03 Testes de usabilidade</li>
+          <li class="list-item">01 Guias de estilo e Design Systems</li>
+          <li class="list-item">02 Design responsivo</li>
+          <li class="list-item">03 Prototipação e testes visuais</li>
         </ul>
 
-        <h4 class="heading-sm">Design gráfico</h4>
+        <h4 class="heading-sm">Experiência de Usuário (UX)</h4>
         <div class="container close indented">
           <hr class="identation" />
           <p class="body-md">
-            Curabitur auctor pulvinar leo at blandit. Morbi convallis metus nec pretium feugiat.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo mattis turpis.
-            Duis mollis diam id ligula tincidunt, porta tempus erat posuere. Aenean sagittis rhoncus
-            justo nec accumsan.
+            Um produto bonito e que funciona bem de nada serve se quem vai usá-lo não consegue
+            entender como ele funciona ou decide que não gosta dele. Projetar para uma boa
+            experiência do usuário permite que o usuário final interaja com o produto de forma
+            eficiente e satisfatória, garantindo que ele atinja seus objetivos sem frustrações.
+          </p>
+        </div>
+
+        <ul>
+          <li class="list-item">01 Pesquisa e análise de usuários</li>
+          <li class="list-item">02 Mapeamento de jornada do usuário</li>
+          <li class="list-item">03 Arquitetura da Informação</li>
+        </ul>
+
+        <h4 class="heading-sm">Identidade Visual</h4>
+        <div class="container close indented">
+          <hr class="identation" />
+          <p class="body-md">
+            A identidade visual é a <em>alma</em> do seu produto, a primeira impressão que fica e a
+            forma como ele se comunica com o mundo. Não se trata apenas de um logotipo, cores e
+            letras bonitas, mas de uma linguagem visual que reflete os valores e a essência da sua
+            marca. É o que torna seu produto reconhecível e memorável.
           </p>
         </div>
 
         <ul>
           <li class="list-item">01 Sistemas de identidade visual</li>
           <li class="list-item">02 Manual de marca</li>
-          <li class="list-item">03 Testes de usabilidade</li>
+          <li class="list-item">03 Materiais de apoio e comunicação</li>
         </ul>
       </div>
     </section>
@@ -109,11 +133,11 @@ onMounted(() => {
     <section class="section" id="about-section">
       <div class="container left col far">
         <h2 class="heading-sm">[Sobre]</h2>
-        <p class="section-intro">Quem sou eu</p>
+        <p class="section-intro">Cabeça nas nuvens, pés no chão</p>
         <p class="body-md">
-          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
-          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
-          nibh a, semper neque.
+          Gosto de criar de tudo. O ato criativo, para mim, é indissociável de tudo o que eu faço.
+          Mas claro, criatividade sem organização não leva a lugar nenhum. Para mim, todo esforço
+          criativo precisa estar na interseção entre o incrível e o factível.
         </p>
         <div class="photo-container">
           <img class="my-photo" id="my-photo" src="../assets/media/photo.png" alt="Foto" />
@@ -126,9 +150,9 @@ onMounted(() => {
           <hr class="identation" />
           <ul>
             <li class="body-md">Desk Research</li>
-            <li class="body-md">Testes de usabilidade</li>
-            <li class="body-md">Adobe Illustrator</li>
-            <li class="body-md">Adobe InDesign</li>
+            <li class="body-md">Questionários</li>
+            <li class="body-md">Entrevistas com usuário</li>
+            <li class="body-md">Avaliação de usabilidade</li>
           </ul>
         </div>
 
@@ -136,10 +160,10 @@ onMounted(() => {
         <div class="container close indented">
           <hr class="identation" />
           <ul>
+            <li class="body-md">Planejamento de produto</li>
             <li class="body-md">Design Systems</li>
-            <li class="body-md">Adobe Photoshop</li>
-            <li class="body-md">Adobe Illustrator</li>
-            <li class="body-md">Adobe InDesign</li>
+            <li class="body-md">Design Sprints</li>
+            <li class="body-md">Gestão de Projeto</li>
           </ul>
         </div>
 
@@ -158,7 +182,8 @@ onMounted(() => {
         <div class="container close indented">
           <hr class="identation" />
           <ul>
-            <li class="body-md">Figma</li>
+            <li class="body-md">Figma Design</li>
+            <li class="body-md">Figma Slides</li>
             <li class="body-md">Adobe Photoshop</li>
             <li class="body-md">Adobe Illustrator</li>
             <li class="body-md">Adobe InDesign</li>
@@ -172,23 +197,22 @@ onMounted(() => {
     <section class="section" id="contact-section">
       <div class="container left col far">
         <h2 class="heading-sm">[Contato]</h2>
-        <p class="section-intro">Vamos conversar</p>
+        <p class="section-intro">Oi :)</p>
         <p class="body-md">
-          Phasellus vitae scelerisque metus. Morbi vel venenatis arcu. Nullam vitae dictum magna.
-          Mauris consequat libero id risus euismod placerat. Mauris ut tortor gravida, dignissim
-          nibh a, semper neque. Integer ac volutpat odio. Integer imperdiet, nunc nec aliquet
-          convallis, nisl neque luctus arcu, id porta libero tortor eu enim. Fusce id magna
-          molestie, feugiat justo vel, dapibus odio.
+          Tem uma ideia borbulhando? Precisa de ajuda para traduzir um desafio de design em uma
+          solução mais clara? Ou talvez só queira conversar um pouco sobre produtos digitais? Seja
+          qual for o motivo, adoraria te ouvir. Minha caixa de entrada está sempre aberta para
+          conversas que geram valor!
         </p>
       </div>
       <div class="container right col close">
-        <h4 class="heading-sm">Manda uma mensagem</h4>
+        <h4 class="heading-sm">Mande uma mensagem:</h4>
         <ContactInfo
           content="fellipemsilva.contato@gmail.com"
           @copy-success="(message) => showToast(message, 'success')"
           @copy-error="(message) => showToast(message, 'error')"
         />
-        <h4 class="heading-sm">Manda um alô :)</h4>
+        <h4 class="heading-sm">Mande um alô:</h4>
         <ContactInfo
           content="+88 99221-2586"
           @copy-success="(message) => showToast(message, 'success')"
@@ -198,8 +222,6 @@ onMounted(() => {
     </section>
 
     <FooterComponent />
-
-    <!-- <CustomCursor /> -->
   </main>
 </template>
 
@@ -228,7 +250,7 @@ onMounted(() => {
   width: 100%;
 }
 
-#services-section ul:first-of-type {
+#services-section ul {
   margin-bottom: 2rem;
 }
 

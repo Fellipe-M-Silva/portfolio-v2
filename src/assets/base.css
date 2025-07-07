@@ -164,7 +164,7 @@ footer {
 }
 
 .container.left.body-md {
-  padding-left: calc(50% - 0.5rem);
+  /* padding-left: calc(100% * (2 / 3)- 0.5rem); */
   width: 100%;
 }
 
@@ -276,7 +276,7 @@ button.ghost:hover {
   }
 
   .container.left .body-md {
-    width: calc(50% - 0.5rem);
+    width: calc(100% * (2/3) - 0.5rem);
   }
 
   .container.right {

@@ -52,9 +52,31 @@ const handleMouseOver = (event) => {
   let nextIsCursorFilled = false
   let nextIsCursorVisible = true
 
+  const getGreetingBasedOnTime = () => {
+    const now = new Date()
+    const hour = now.getHours()
+
+    if (hour >= 5 && hour < 12) {
+      return 'Bom dia ☼'
+    } else if (hour >= 12 && hour < 18) {
+      return 'Boa tarde ;)'
+    } else if (hour >= 18 && hour < 24) {
+      return 'Boa noite ☾'
+    } else {
+      return 'Boa madrugada???'
+    }
+  }
+
   if (hasClass(target, 'button') || hasClass(target, 'primary') || hasClass(target, 'secondary')) {
     nextIsCursorVisible = false
     nextIsCursorFilled = false
+  } else if (
+    target.id === 'current-time' ||
+    (target.parentElement && target.parentElement.id === 'current-time')
+  ) {
+    nextMessage = getGreetingBasedOnTime()
+    nextShowMessage = true
+    nextIsCursorFilled = true
   } else if (hasClass(target, 'social-link')) {
     nextMessage = '↗'
     nextShowMessage = true
