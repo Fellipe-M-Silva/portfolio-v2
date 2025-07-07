@@ -59,7 +59,6 @@ const assetFullUrl = computed(() => {
       <div class="project-data">
         <div class="project-data-header">
           <h3 class="title-lg">{{ formattedProjectNumber }} {{ props.name }}</h3>
-          <p class="title-lg">{{ props.year }}</p>
         </div>
         <p class="body-md">{{ props.title }}</p>
         <p class="title-sm">{{ formattedTags }}</p>
@@ -112,7 +111,6 @@ article.project-card {
 }
 
 .project-image {
-  aspect-ratio: 4 / 3;
   z-index: 30;
   overflow: hidden;
 }
@@ -169,7 +167,6 @@ article.project-card:hover .overlay {
 
   .project-image {
     flex: 0 0 10rem;
-    max-height: 12rem;
   }
 
   h3.project-number {

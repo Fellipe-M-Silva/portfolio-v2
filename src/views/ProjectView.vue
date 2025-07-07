@@ -24,13 +24,6 @@ onMounted(() => {
   fetchProject(projectId)
 })
 
-// watch(
-//   () => route.params.id,
-//   (newId) => {
-//     fetchProject(newId)
-//   }
-// )
-
 const formattedTags = computed(() => {
   return project.value && project.value.tags ? project.value.tags.join(', ') : ''
 })
@@ -99,10 +92,17 @@ const formattedTechniquesAndTools = computed(() => {
               </div>
             </div>
 
-            <figure v-else-if="block.type === 'image'">
+            <!-- <figure v-else-if="block.type === 'image'">
               <img :src="assetBaseUrl + block.url" :alt="block.alt" />
               <figcaption v-if="block.caption">{{ block.caption }}</figcaption>
-            </figure>
+            </figure> -->
+
+            <img
+              v-else-if="block.type === 'image'"
+              :src="assetBaseUrl + block.url"
+              :alt="block.alt"
+              :aria-label="`Imagem: ${block.alt}`"
+            />
           </template>
         </template>
         <p v-else-if="project">Nenhum conteúdo detalhado disponível para este projeto.</p>
@@ -116,7 +116,7 @@ const formattedTechniquesAndTools = computed(() => {
 
 <style scoped>
 .right {
-  padding-top: 0;
+  padding-top: 1rem;
   align-items: flex-start;
 }
 
@@ -140,12 +140,9 @@ const formattedTechniquesAndTools = computed(() => {
 .indented-project .identation {
   width: calc(100% * (1 / 4) - 0.5rem);
 }
-/* .indented-project .container {
-  width: calc(100% * (3 / 4) - 0.5rem);
-} */
 
-.project-metadata :first-child {
-  width: calc(100% * (1 / 4) - 0.5rem);
+.project-metadata {
+  flex-direction: column;
 }
 
 section {
@@ -162,10 +159,14 @@ img {
 
 @media screen and (min-width: 480px) {
   .indented-project .identation {
-    width: calc(100% * (1 / 2) - 0.5rem);
+    width: calc(100% * (1 / 3) - 0.5rem);
   }
   .indented-project .text {
     width: calc(100% * (1 / 2) - 0.5rem);
+  }
+
+  .project-metadata {
+    flex-direction: row;
   }
 
   .project-metadata :first-child {
@@ -174,6 +175,9 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .right {
+    padding-top: 1.5rem;
+  }
   .project-title p {
     width: calc(100% * (1 / 2) - 0.5rem);
   }
@@ -184,6 +188,10 @@ img {
 }
 
 @media screen and (min-width: 1024px) {
+  .right {
+    padding-top: 0;
+  }
+
   #back {
     transform: translateX(-1rem);
   }

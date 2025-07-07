@@ -142,7 +142,7 @@ onUnmounted(() => {
 
     <div class="right-container">
       <ThemeToggle />
-      <button class="ghost icon-button" @click="isMenuVisible = true" v-if="!isInProjectRoute">
+      <button class="ghost icon-button" @click="isMenuVisible = true" v-if="!isProjectRoute">
         <span class="material-icons"> menu </span>
       </button>
     </div>

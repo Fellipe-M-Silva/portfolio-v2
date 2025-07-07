@@ -63,11 +63,11 @@
       },
       {
         "type": "text",
-        "paragraph": "Testes de usabilidade iterativos foram cruciais para refinar a interface, garantindo que usuários de todos os níveis de habilidade pudessem navegar e desfrutar do aplicativo sem frustrações. A função de 'Planejador de Refeições' se destacou como um recurso favorito."
+        "paragraph": "Testes de usabilidade iterativos foram cruciais para refinar a interface, garantindo que usuários de todos os níveis de habilidade pudessem navegar e desfrutar do aplicativo sem frustrações. A função de 'Planejador de Refeições' se destacou como um recurso favorito. A implementação de feedback contínuo permitiu ajustes rápidos e eficazes."
       },
       {
         "type": "heading",
-        "level": 4,
+        "level": 3,
         "text": "Resultado e Impacto"
       },
       {

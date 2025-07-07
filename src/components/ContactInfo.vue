@@ -52,7 +52,7 @@ const copyToClipboard = (event) => {
 }
 
 .contact-info:hover {
-  color: var(--text-strong);
+  color: var(--text-on-primary);
   background-color: var(--primary-hover);
 }
 
