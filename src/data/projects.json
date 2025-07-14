@@ -1,19 +1,13 @@
 [
   {
-    "id": "app-receitas-gourmet",
-    "name": "App Receitas Gourmet: Sabor em Suas Mãos",
-    "title": "Redefinindo a experiência culinária digital com um aplicativo intuitivo e visualmente apetitoso.",
-    "caption": "Desenvolvimento completo de UX/UI para um aplicativo mobile que conecta entusiastas da culinária a receitas exclusivas e experiências gastronômicas interativas.",
+    "id": "sistema-multiplataforma-para-restaurantes",
+    "name": "Sistema multiplataforma para restaurantes",
+    "title": "Experiência fluida para restaurantes e clientes",
+    "caption": "Este projeto é de um sistema white label para que restaurantes gerenciem mesas, clientes, pedidos e entregas. A plataforma envolve três sistemas principais: uma plataforma de gestão, uma plataforma para garçons e uma plataforma para clientes fazerem acessarem o menu e fazerem pedidos em mesa.",
     "year": 2024,
     "myRole": "Lead UX/UI Designer",
-    "tags": [
-      "UX Design",
-      "UI Design",
-      "Aplicativo Mobile",
-      "Design Centrado no Usuário",
-      "Prototipagem"
-    ],
-    "techniquesAndTools": ["Figma", "Miro", "User Research", "Wireframing", "Atomic Design"],
+    "tags": ["UX Design", "UI Design", "Multiplataforma", "Responsividade"],
+    "techniquesAndTools": ["Figma", "Obsidian", "Benchmarking", "Atomic Design"],
     "coverImage": {
       "url": "/media/projects/placeholder.jpg",
       "alt": "Tela inicial do aplicativo de receitas com imagens de pratos coloridos."
@@ -22,11 +16,11 @@
       {
         "type": "heading",
         "level": 2,
-        "text": "O Desafio: Simplificar e Inspirar"
+        "text": "Contexto"
       },
       {
         "type": "text",
-        "paragraph": "O mercado de aplicativos de receitas é vasto, mas muitos falham em oferecer uma experiência verdadeiramente fluida e inspiradora. Nosso desafio foi criar um aplicativo que não só simplificasse o processo de cozinhar, mas que também incentivasse a experimentação e a paixão pela gastronomia."
+        "paragraph": "Com a popularização dos aplicativos de entrega de comida, fazer pedidos tornou-se uma tarefa rápida e direta. Essa facilidade também pode ser aproveitada em restaurantes; este sistema permite que restaurantes ofereçam uma experiência similar para seus clientes ao fazer pedidos em mesa, sem a necessidade de um aplicativo."
       },
       {
         "type": "image",
@@ -35,21 +29,39 @@
       },
       {
         "type": "heading",
-        "level": 3,
-        "text": "Análise e Estratégia Inicial"
+        "level": 2,
+        "text": "O desafio"
       },
       {
         "type": "text",
-        "paragraph": "Através de uma extensa pesquisa com usuários e análise de concorrência, identificamos os principais pontos de dor: navegação complexa, falta de personalização e visuais pouco atraentes. Focamos em uma arquitetura de informação clara e um sistema de design que transmitisse a riqueza dos sabores."
+        "paragraph": "Após uma análise de concorrentes e similares, duas coisas tornaram-se claras: o cliente final quer fazer pedidos sem fluxos extensos ou baixar aplicativos dedicados e os restaurantes precisam de um sistema robusto para gerenciar pedidos e mesas."
       },
       {
         "type": "heading",
         "level": 3,
-        "text": "Soluções de UX/UI Inovadoras"
+        "text": "A solução prevista"
       },
       {
         "type": "text",
-        "paragraph": "Implementamos um sistema de tags inteligentes para filtragem rápida de receitas, um modo de cozimento guiado passo a passo e a integração de vídeos curtos. O design visual priorizou imagens de alta qualidade e uma tipografia legível, com uma paleta de cores que remetesse à culinária fina."
+        "paragraph": "Usamos o Framework <a href=https://quasar.dev/ target=_blank class=project-link>Quasar</a>, que nos forneceu a maioria dos componentes que precisávamos. Com alguns ajustes adicionais e a montagem de uma guia de estilo, em menos de duas semanas já tinhamos uma base responsiva e ajustável que nos permitiu focar apenas na interação.<br><br>Para os restaurantes, o foco foi em projetar um sistema multiplataforma que integra gestão, balcão e garçons. Para os clientes, um cardápio virtual acessível via QR code de rápido e fácil acesso. Ele deve permitir a realização e o acompanhamento de pedidos em mesa e a inclusão de vários clientes em um único pedido."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "A briga"
+      },
+      {
+        "type": "text",
+        "paragraph": "O maior desafio foi o <strong>painel de mesas</strong>. Ele é a parte central do sistema para restaurantes e precisava ser robusto o suficiente para um número de mesas que pode variar entre poucas unidades a dezenas."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O insight"
+      },
+      {
+        "type": "text",
+        "paragraph": "Usar o Quasar me deu um ideia: <strong>Densidade</strong>. Alguns componentes têm variações menores que permitem que mais informação seja exibida. Depois de uma série de iterações e testes, essa noção me deu a ideia de aplicar o mesmo conceito nos cards de mesa: três níveis de densidade, que funcionam como um zoom.<br><br>O funcionário no balcão pode, com um clique, alternar entre uma visualização detalhada de mesas e um panorama geral das mesas do restaurante."
       },
       {
         "type": "image",
@@ -58,21 +70,21 @@
       },
       {
         "type": "heading",
-        "level": 3,
-        "text": "Refinamento e Testes de Usabilidade"
+        "level": 2,
+        "text": "Resultados"
       },
       {
         "type": "text",
-        "paragraph": "Testes de usabilidade iterativos foram cruciais para refinar a interface, garantindo que usuários de todos os níveis de habilidade pudessem navegar e desfrutar do aplicativo sem frustrações. A função de 'Planejador de Refeições' se destacou como um recurso favorito. A implementação de feedback contínuo permitiu ajustes rápidos e eficazes."
+        "paragraph": "A definição de um padrão para o comportamento das telas se revelou um catalizador de atividades, permitindo que eu pudesse usar o tempo para me dedicar em desenhar as funcionalidades mais importantes. Eventualmente, o projeto expandiu para incluir funcionalidades de delivery e pedidos à distância, para as quais o sistema já estava preparado para receber sem grandes ajustes.<br><br>Usar um framework permitiu minimizar a criação de novos componentes, acelerando o processo de design e desenvolvimento. A ideia de aplicar a mesma lógica de densidade para o painel de mesas foi um divisor de águas, permitindo que o sistema fosse escalável e adaptável a diferentes tamanhos de restaurantes."
       },
       {
         "type": "heading",
         "level": 3,
-        "text": "Resultado e Impacto"
+        "text": "O que aprendemos"
       },
       {
         "type": "text",
-        "paragraph": "O App Receitas Gourmet foi lançado com sucesso, recebendo avaliações positivas por sua facilidade de uso e beleza visual. Aumentamos o engajamento dos usuários em 40% nas primeiras semanas, provando que um bom design pode, de fato, tornar a culinária uma experiência mais doce."
+        "paragraph": "Restrições de projeto podem ser encaradas como um exercício em tirar o melhor proveito de um recurso disponível. Entender a filosofia de design de um framework permite uma menor fricção durante o processo criativo, facilitando a exploração de soluções dentro dos limites estabelecidos e garantindo trabalho adicional só seja realizado quando necessário."
       }
     ]
   },

@@ -159,8 +159,6 @@ footer {
   flex: 1 0 0;
   align-items: flex-start;
   justify-content: flex-start;
-  position: sticky;
-  top: 7rem;
 }
 
 .container.left.body-md {
@@ -276,7 +274,7 @@ button.ghost:hover {
   }
 
   .container.left .body-md {
-    width: calc(100% * (2/3) - 0.5rem);
+    width: calc(100% * (2 / 3) - 0.5rem);
   }
 
   .container.right {
@@ -302,7 +300,10 @@ button.ghost:hover {
     flex-direction: row;
     padding: 2rem;
   }
-
+  .container.left {
+    position: sticky;
+    top: 7rem;
+  }
   .container.right {
     padding-top: 4.5rem;
     align-items: flex-start;

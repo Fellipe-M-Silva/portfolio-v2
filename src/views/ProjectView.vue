@@ -88,7 +88,7 @@ const formattedTechniquesAndTools = computed(() => {
             <div class="container close indented-project" v-else-if="block.type === 'text'">
               <hr class="identation" />
               <div class="container col close text">
-                <p class="body-md">{{ block.paragraph }}</p>
+                <p class="body-md" v-html="block.paragraph"></p>
               </div>
             </div>
 
@@ -155,6 +155,13 @@ img {
   display: block;
   margin: 0 auto;
   border-radius: 0.25rem;
+}
+
+.project-link {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 0.25rem;
+  text-decoration-style: wavy;
 }
 
 @media screen and (min-width: 480px) {
