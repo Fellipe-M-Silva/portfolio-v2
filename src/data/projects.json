@@ -1,9 +1,10 @@
 [
   {
     "id": "redesign-site-ufc-quixada",
+    "status": "published",
     "name": "Redesign Site UFC Quixadá",
     "title": "Facilitando o acesso à informação para a comunidade acadêmica",
-    "caption": "Este projeto envolve a reorganização e o redesign do site da Universidade Federal do Ceará, campus Quixadá. A página é um agregador de informações para alunos, professores e a comunidade em geral, e o objetivo é permitir que os usuários encontrem facilmente o que procuram.",
+    "caption": "Reorganização e o redesign do site da Universidade Federal do Ceará, campus Quixadá. A página é um agregador de informações para alunos, professores e a comunidade em geral, e o objetivo é permitir que os usuários encontrem facilmente o que procuram.",
     "year": 2025,
     "myRole": "Lead UX/UI Designer, Pesquisador",
     "tags": ["UX Design", "Arquitetura da Informação", "Responsividade", "Usabilidade"],
@@ -93,6 +94,7 @@
   },
   {
     "id": "sistema-multiplataforma-para-restaurantes",
+    "status": "hidden",
     "name": "Sistema multiplataforma para restaurantes",
     "title": "Experiência fluida para restaurantes e clientes",
     "caption": "Este projeto é de um sistema white label para que restaurantes gerenciem mesas, clientes, pedidos e entregas. A plataforma envolve três sistemas principais: uma plataforma de gestão, uma plataforma para garçons e uma plataforma para clientes fazerem acessarem o menu e fazerem pedidos em mesa.",
@@ -181,7 +183,90 @@
     ]
   },
   {
+    "id": "va-la-facilitando-o-emprestimo-de-ferramentas",
+    "status": "published",
+    "name": "VáLá: facilitando o empréstimo de ferramentas",
+    "title": "Facilitando o empréstimo de ferramentas entre coterrâneos",
+    "caption": "Projeto de um aplicativo de smartphone para facilitar o empréstimo de ferramentas entre usuários com o objetivo de promover colaboração, sustentabilidade e um pouco de renda extra para os locadores.",
+    "year": 2024,
+    "myRole": "Lead UX/UI Designer, Pesquisador",
+    "tags": ["UX Design", "Mobile", "Aplictivo", "Desenvolvimento"],
+    "techniquesAndTools": ["Figma", "Questionário", "Material Design", "React Native", "Expo"],
+    "completeCase": { "href": null, "title": "Em breve" },
+    "coverImage": {
+      "url": "/media/projects/va-la/thumbnail.png",
+      "alt": "Proposta de interface para o app VáLá."
+    },
+    "content": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Contexto"
+      },
+      {
+        "type": "text",
+        "paragraph": "Cidades universitárias frequentemente recebem alunos de outros municípios. Muitas vezes, a mudança de cidade é acompanhada de uma nova realidade: a de morar sozinho.<br><br>Pensando nesses alunos e em pessoas que precisam fazer pequenos reparos em casa, o aplicativo VáLá foi pensado para permitir que não só universitários, mas também moradores locais, possam emprestar e alugar ferramentas de forma prática e rápida."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O plano"
+      },
+      {
+        "type": "text",
+        "paragraph": "Para entender como melhor conectar locadores e loctatários, realizamos um questionário com usuários potenciais, no qual perguntamos sobre suas necessidades, preferências e expectativas em relação ao aplicativo. As respostas nos ajudaram a definir as funcionalidades principais do aplicativo e a criar uma experiência de usuário intuitiva e agradável."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O insight"
+      },
+      {
+        "type": "text",
+        "paragraph": "Munidos de informações sobre as expectativas e necessidades de nossos futuros usuários, começamos a trabalhar no design do aplicativo. A ideia era criar uma interface simples e funcional, que permitisse aos usuários encontrar facilmente as ferramentas que precisavam e entrar em contato com os locadores.<br><br>Depois de muitas iterações, discussões e análise de semelhantes e concorrentes, chegamos ao produto que melhor funcionava dado o escopo: um <strong>marketplace</strong>. Produto definido, passamos a escrever os requisitos do aplicativo e a criar o protótipo de alta fidelidade no Figma, desenhando as interfaces principais e anotando os fluxos de usuário."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/va-la/user-flow.png",
+        "alt": "Documentação do fluxo de solicitação de aluguel de ferramenta."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O pulo do gato"
+      },
+      {
+        "type": "text",
+        "paragraph": "Ao nos direcionarmos para o desenvolvimento de um marketplace, a primeira mudança drástica foi separar a experiência de locador e locatário na forma aplicativos distintos para cada um. Isso permitiu que cada usuário tivesse uma experiência mais simples e menos poluída.<br><br>Focando primeiramente no locatário, o aplicativo permite que ele encontre ferramentas e equipamentos próximos, solicite o aluguel mediante um prazo combinado, retire ou receba o equipamento em casa, gerencie o seu pedido, faça o pagamento e a devolução."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O MVP"
+      },
+      {
+        "type": "text",
+        "paragraph": "A versão 1.0 do aplicativo VáLá Cliente foi desenvolvida usando React Native e Expo, o que nos permitiu criar um aplicativo multiplataforma com uma base sólida e escalável. Um bom documento de requisitos, os componentes do Material Design e o uso de variáveis de estilo nos permitiram criar uma interface consistente e agradável, além de facilitar a manutenção e a evolução do aplicativo."
+      },
+      {
+        "type": "image",
+        "url": "/media/projects/va-la/mvp.png",
+        "alt": "Redesign do menu de navegação."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "O que aprendemos"
+      },
+      {
+        "type": "text",
+        "paragraph": "Projeto de produto não é só sobre design. Além de entender as necessidades dos usuários, o mercado e as limitações técnicas, é preciso juntar um time para tornar uma ideia em algo concreto. Trabalhar com desenvolvimento, mesmo que em um projeto fictício trouxe algumas reflexões importantes: a importância de um bom documento de requisitos, a necessidade de uma base sólida e escalável para o aplicativo e a importância de um design consistente e agradável.<br><br>O projeto VáLá é um exemplo de como o design não se faz sem considerar também quem desenvolve. É preciso entender as limitações e possibilidades da tecnologia para criar uma experiência de usuário que seja viável e sustentável."
+      }
+    ]
+  },
+  {
     "id": "identidade-visual-mago-do-espaco",
+    "status": "published",
     "name": "Identidade visual Mago do Espaço",
     "title": "Projeto de identidade visual para um portal esotérico",
     "caption": "Desenvolvimento de sistema de identidade visual para um portal de notícias esotéricas.",
