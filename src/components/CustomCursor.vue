@@ -77,10 +77,6 @@ const handleMouseOver = (event) => {
     nextMessage = getGreetingBasedOnTime()
     nextShowMessage = true
     nextIsCursorFilled = true
-  } else if (hasClass(target, 'social-link')) {
-    nextMessage = '↗'
-    nextShowMessage = true
-    nextIsCursorFilled = true
   } else if (
     target.id === 'my-name' ||
     (target.parentElement && target.parentElement.id === 'my-name') ||
@@ -96,6 +92,14 @@ const handleMouseOver = (event) => {
     nextIsCursorFilled = true
   } else if (hasClass(target, 'contact-info')) {
     nextMessage = 'Copiar'
+    nextShowMessage = true
+    nextIsCursorFilled = true
+  } else if (hasClass(target, 'inactive-link')) {
+    nextMessage = 'Em breve...'
+    nextShowMessage = true
+    nextIsCursorFilled = true
+  } else if (hasClass(target, 'social-link')) {
+    nextMessage = '↗'
     nextShowMessage = true
     nextIsCursorFilled = true
   }
@@ -185,7 +189,7 @@ onUnmounted(() => {
   cursor: none;
   opacity: 1;
   background-color: var(--primary);
-  z-index: 1000;
+  z-index: 1010;
 
   display: flex;
   align-items: center;

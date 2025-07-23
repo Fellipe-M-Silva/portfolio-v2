@@ -12,7 +12,7 @@ const showToast = inject('showToast')
 const projects = ref([])
 
 onMounted(() => {
-  projects.value = projetos
+  projects.value = projetos.filter(project => project.status === 'published')
   console.log('Projetos carregados:', projects.value)
 })
 </script>

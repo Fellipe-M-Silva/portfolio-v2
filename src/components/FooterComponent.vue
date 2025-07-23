@@ -25,7 +25,7 @@ const backToTop = () => {
       </p>
       <ul class="title-sm">
         <li v-for="(link, index) in socialLinks" :key="index">
-          <a :href="link.url" :target="link.target" :aria-label="link.ariaLabel || link.name">{{
+          <a :href="link.status === 'inactive' ? null : link.url" :class="{ 'inactive-link': link.status === 'inactive' }" :target="link.status === 'inactive' ? null : link.target" :aria-label="link.ariaLabel || link.name">{{
             link.name
           }}</a>
         </li>
@@ -57,6 +57,7 @@ footer {
   min-width: 280px;
   flex: 1 0 0;
 }
+
 
 ul {
   display: flex;

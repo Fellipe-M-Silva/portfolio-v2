@@ -13,9 +13,14 @@ const activeSection = ref('')
 const isMenuVisible = ref(false)
 
 const filteredSocialLinks = computed(() => {
-  return socialLinks.filter(link => link.name !== 'GitHub');
-});
-
+  // Filter out GitHub and add 'isActive' property based on status
+  return socialLinks
+    .filter((link) => link.name !== 'GitHub')
+    .map((link) => ({
+      ...link,
+      isActive: link.status === 'active', // Add a new property `isActive`
+    }))
+})
 const sections = ['projects-section', 'services-section', 'about-section', 'contact-section']
 let observers = []
 
@@ -134,9 +139,9 @@ onUnmounted(() => {
       <a
         v-for="(link, index) in filteredSocialLinks"
         :key="index"
-        class="title-sm"
-        :href="link.url"
-        :target="link.target"
+        :class="{ 'title-sm': true, 'title-sm inactive-link': !link.isActive }"
+        :href="link.isActive ? link.url : null"
+        :target="link.isActive ? link.target : null"
         :tabindex="isScrolled && !isProjectRoute ? 0 : -1"
         :aria-label="link.ariaLabel || link.name"
       >{{ link.name }}</a>

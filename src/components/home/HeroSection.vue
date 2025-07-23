@@ -34,7 +34,13 @@ const scrollToProjects = () => {
 }
 
 const filteredSocialLinks = computed(() => {
-  return socialLinks.filter((link) => link.name !== 'GitHub')
+  // Filter out GitHub and add 'isActive' property based on status
+  return socialLinks
+    .filter((link) => link.name !== 'GitHub')
+    .map((link) => ({
+      ...link,
+      isActive: link.status === 'active', // Add a new property `isActive`
+    }))
 })
 
 onMounted(() => {
@@ -52,9 +58,9 @@ onMounted(() => {
       class="social-link"
     >
       <a
-        :href="link.url"
-        :target="link.target"
-        class="title-sm"
+        :href="link.isActive ? link.url : null"
+        :target="link.isActive ? link.target : null"
+        :class="{ 'title-sm': true, 'title-sm inactive-link': !link.isActive }"
         :aria-label="link.ariaLabel || link.name"
         >{{ link.name }}</a
       >
@@ -135,6 +141,7 @@ h1 {
   color: var(--text-strong);
   background-color: var(--surface-a-hover);
 }
+
 
 #link-1,
 #link-2,
