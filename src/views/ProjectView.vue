@@ -63,6 +63,17 @@ const formattedTechniquesAndTools = computed(() => {
             <p class="title-md">Ferramentas</p>
             <p class="body-md">{{ formattedTechniquesAndTools }}</p>
           </div>
+          <div class="container close project-metadata">
+            <p class="title-md">Caso Completo</p>
+            <template v-if="project && project.completeCase">
+              <a :href="project.completeCase.href" target="_blank" class="body-md">{{
+                project.completeCase.title
+              }}</a>
+            </template>
+            <template v-else>
+              <p class="body-md">Em breve</p>
+            </template>
+          </div>
         </div>
       </div>
 

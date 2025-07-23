@@ -37,6 +37,10 @@ onMounted(() => {
           Desmistificando o design, é possível garantir que o processo seja tão eficaz quanto o
           resultado, gerando impacto duradouro para todos.
         </p>
+
+        <p class="body-md">
+          Aqui estão alguns dos projetos pessoais ou que não estão sob um termo de confidencialidade.
+        </p>
       </div>
 
       <div class="container right col zero">
